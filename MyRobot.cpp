@@ -1,4 +1,5 @@
 #include "WPILib.h"
+#include "Launcher.h"
 
 /**
  * This is a demo program showing the use of the RobotBase class.
@@ -8,13 +9,17 @@
  */ 
 class RobotDemo : public SimpleRobot
 {
-	RobotDrive myRobot; // robot drive system
-	Joystick stick; // only joystick
+	RobotDrive myRobot; 	// robot drive system
+	Joystick leftStick; 	// left joystick
+	Joystick rightStick; 	// right joystick
+	Joystick gamepad; 		// gamepad
 
 public:
 	RobotDemo():
 		myRobot(1, 2),	// these must be initialized in the same order
-		stick(1)		// as they are declared above.
+		leftStick(1),	// as they are declared above.
+		rightStick(2),
+		gamepad(3)
 	{
 		myRobot.SetExpiration(0.1);
 	}
@@ -38,7 +43,7 @@ public:
 		myRobot.SetSafetyEnabled(true);
 		while (IsOperatorControl())
 		{
-			myRobot.ArcadeDrive(stick); // drive with arcade style (use right stick)
+			myRobot.ArcadeDrive(leftStick.GetY(), rightStick.GetX(), false); // arcade drive (two sticks)
 			Wait(0.005);				// wait for a motor update time
 		}
 	}
