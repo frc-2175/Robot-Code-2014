@@ -55,4 +55,3 @@ float getDriveSpeed() {
 float getSteeringSpeed() {
 	OI::rightStick->GetX();
 }
-// useless line

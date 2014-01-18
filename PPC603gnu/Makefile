@@ -31,8 +31,8 @@ else
 MODE_DIR := NonDebug
 endif
 OBJ_DIR := .
-WS_ROOT_DIR := C:/WindRiver/workspace
-PRJ_ROOT_DIR := C:/Users/Storage/GitHub/Robot-Code-2014
+WS_ROOT_DIR := C:/WindRiver/FRC2014Beta
+PRJ_ROOT_DIR := $(WS_ROOT_DIR)/RobotBuilder2014Bot
 
 
 
