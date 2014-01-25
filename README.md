@@ -1,4 +1,4 @@
-Robot-Code-2014
+Robot Code 2014
 ===============
 
 The Fighting Calculators' code for the 2014 game, Aerial Assist.
