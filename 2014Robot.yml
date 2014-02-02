@@ -6,11 +6,109 @@ Base: Robot
 Children:
 - Name: Subsystems
   Base: Subsystems
-  Children: []
+  Children:
+  - Name: Drivetrain
+    Base: Subsystem
+    Children:
+    - Name: Robot Drive
+      Base: Robot Drive 2
+      Children:
+      - Name: Left
+        Base: Speed Controller
+        Children: []
+        Properties:
+          Output Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
+            choices: &id001 ['1', '2']
+            default: '1'
+            name: Output Module (Digital)
+            validators: &id002 [PWMOutput]
+            value: '1'
+          Type: !!robotbuilder.data.properties.ChoicesProperty
+            choices: &id003 [Victor, Jaguar, Talon]
+            default: Victor
+            name: Type
+            validators: null
+            value: Talon
+          Output Channel (PWM): !!robotbuilder.data.properties.ChoicesProperty
+            choices: &id004 ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+            default: '1'
+            name: Output Channel (PWM)
+            validators: &id005 [PWMOutput]
+            value: '1'
+      - Name: Right
+        Base: Speed Controller
+        Children: []
+        Properties:
+          Output Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
+            choices: *id001
+            default: '1'
+            name: Output Module (Digital)
+            validators: *id002
+            value: '1'
+          Type: !!robotbuilder.data.properties.ChoicesProperty
+            choices: *id003
+            default: Victor
+            name: Type
+            validators: null
+            value: Talon
+          Output Channel (PWM): !!robotbuilder.data.properties.ChoicesProperty
+            choices: *id004
+            default: '1'
+            name: Output Channel (PWM)
+            validators: *id005
+            value: '2'
+      Properties:
+        Sensitivity: !!robotbuilder.data.properties.DoubleProperty {default: 0.5,
+          name: Sensitivity, validators: null, value: 0.5}
+        Safety Enabled: !!robotbuilder.data.properties.BooleanProperty {default: true,
+          name: Safety Enabled, validators: null, value: true}
+        Left Motor Inverted: !!robotbuilder.data.properties.BooleanProperty {default: false,
+          name: Left Motor Inverted, validators: null, value: false}
+        Right Motor: !!robotbuilder.data.properties.ChildSelectionProperty
+          default: 1
+          name: Right Motor
+          type: PIDOutput
+          validators: [RobotDrive2, ChildDropdownSelected]
+          value: Drivetrain Right
+        Maximum Output: !!robotbuilder.data.properties.DoubleProperty {default: 1,
+          name: Maximum Output, validators: null, value: 1.0}
+        Left Motor: !!robotbuilder.data.properties.ChildSelectionProperty
+          default: 0
+          name: Left Motor
+          type: PIDOutput
+          validators: [RobotDrive2, ChildDropdownSelected]
+          value: Drivetrain Left
+        Right Motor Inverted: !!robotbuilder.data.properties.BooleanProperty {default: false,
+          name: Right Motor Inverted, validators: null, value: false}
+        Safety Expiration Time: !!robotbuilder.data.properties.DoubleProperty {default: 0.1,
+          name: Safety Expiration Time, validators: null, value: 0.1}
+    Properties:
+      Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Default Command, type: Command, validators: null, value: ArcadeDriveWithJoysticks}
   Properties: {}
 - Name: Operator Interface
   Base: OI
-  Children: []
+  Children:
+  - Name: Joystick Left
+    Base: Joystick
+    Children: []
+    Properties:
+      Number: !!robotbuilder.data.properties.ChoicesProperty
+        choices: &id006 ['1', '2', '3', '4']
+        default: 1
+        name: Number
+        validators: &id007 [Joystick]
+        value: '1'
+  - Name: Joystick Right
+    Base: Joystick
+    Children: []
+    Properties:
+      Number: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id006
+        default: 1
+        name: Number
+        validators: *id007
+        value: '2'
   Properties: {}
 - Name: Commands
   Base: Commands
@@ -21,6 +119,14 @@ Children:
     Properties:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Requires, type: Subsystem, validators: null, value: None}
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+  - Name: ArcadeDriveWithJoysticks
+    Base: Command
+    Children: []
+    Properties:
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: Drivetrain}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
   Properties: {}
