@@ -21,7 +21,7 @@ void ArcadeDriveWithJoysticks::Initialize() {
 }
 // Called repeatedly when this Command is scheduled to run
 void ArcadeDriveWithJoysticks::Execute() {
-	Robot::drivetrain->ArcadeDriveWithParameters(Robot::oi->getDriveSpeed(),Robot::oi->getSteeringSpeed());
+	Robot::drivetrain->ArcadeDriveWithParameters(Robot::oi->getJoystickLeft()->GetY(),Robot::oi->getJoystickRight()->GetX()); 
 }
 // Make this return true when this Command no longer needs to run execute()
 bool ArcadeDriveWithJoysticks::IsFinished() {
@@ -34,5 +34,4 @@ void ArcadeDriveWithJoysticks::End() {
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
 void ArcadeDriveWithJoysticks::Interrupted() {
-	
 }

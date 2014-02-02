@@ -9,8 +9,8 @@
 // it from being updated in th future.
 
 
-#ifndef ARCADE_DRIVE_WITH_JOYSTICKS_H
-#define ARCADE_DRIVE_WITH_JOYSTICKS_H
+#ifndef ARCADEDRIVEWITHJOYSTICKS_H
+#define ARCADEDRIVEWITHJOYSTICKS_H
 
 
 #include "Commands/Subsystem.h"
