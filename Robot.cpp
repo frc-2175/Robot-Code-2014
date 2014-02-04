@@ -36,6 +36,7 @@ void Robot::RobotInit() {
 //	autoChooser->AddObject("3 - High Goal, Mobility Bonus", /* tbd */);
 //	autoChooser->AddObject("4 - Hot Goal, Mobility Bonus", /* tbd */);
 //	autoChooser->AddObject("5 - High Goal, Hot Goal, Mobility Bonus", /* tbd */);
+	SmartDashboard::PutData("Autonomous Routine",autoChooser);
 }
 	
 void Robot::AutonomousInit() {

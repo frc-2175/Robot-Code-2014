@@ -12,6 +12,8 @@
 
 #include "Auton1MobilityBonus.h"
 
+#include "ArcadeDriveWithInputs.h"
+
 Auton1MobilityBonus::Auton1MobilityBonus() {
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());
@@ -29,4 +31,6 @@ Auton1MobilityBonus::Auton1MobilityBonus() {
 	// e.g. if Command1 requires chassis, and Command2 requires arm,
 	// a CommandGroup containing them would require both the chassis and the
 	// arm.
+	
+	AddSequential(new ArcadeDriveWithInputs(0.75,0,1));
 }
