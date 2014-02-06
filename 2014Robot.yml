@@ -105,7 +105,7 @@ Children:
           validators: null
           value: kDistance
         Distance Per Pulse: !!robotbuilder.data.properties.DoubleProperty {default: 1,
-          name: Distance Per Pulse, validators: null, value: 1.0}
+          name: Distance Per Pulse, validators: null, value: 0.001}
         Encoding Type: !!robotbuilder.data.properties.ChoicesProperty
           choices: &id011 [k4X, k2X, k1X]
           default: k4X
@@ -151,7 +151,7 @@ Children:
           validators: null
           value: kDistance
         Distance Per Pulse: !!robotbuilder.data.properties.DoubleProperty {default: 1,
-          name: Distance Per Pulse, validators: null, value: 1.0}
+          name: Distance Per Pulse, validators: null, value: 0.001}
         Encoding Type: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id011
           default: k4X
@@ -173,16 +173,27 @@ Children:
         Reverse Direction: !!robotbuilder.data.properties.BooleanProperty {default: false,
           name: Reverse Direction, validators: null, value: false}
     - Name: Magic PID Output
-      Base: CAN Jaguar
+      Base: Speed Controller
       Children: []
       Properties:
-        CAN ID: !!robotbuilder.data.properties.ChoicesProperty
-          choices: ['2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13',
-            '14', '15', '16', '17', '18', '19', '20']
-          default: '2'
-          name: CAN ID
-          validators: [CANID]
-          value: '2'
+        Output Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id001
+          default: '1'
+          name: Output Module (Digital)
+          validators: *id002
+          value: '1'
+        Type: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id003
+          default: Victor
+          name: Type
+          validators: null
+          value: Talon
+        Output Channel (PWM): !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id004
+          default: '1'
+          name: Output Channel (PWM)
+          validators: *id005
+          value: '10'
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Default Command, type: Command, validators: null, value: ArcadeDriveWithJoysticks}
