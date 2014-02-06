@@ -133,6 +133,10 @@ CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/Auton1MobilityB
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
+CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/DriveForDistance.o : $(PRJ_ROOT_DIR)/Commands/DriveForDistance.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/OI.o : $(PRJ_ROOT_DIR)/OI.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
@@ -153,6 +157,7 @@ OBJECTS_CommandBasedRobotTemplate = CommandBasedRobotTemplate/$(MODE_DIR)/Object
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/ArcadeDriveWithJoysticks.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/Auton0DoNothing.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/Auton1MobilityBonus.o \
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/DriveForDistance.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/OI.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Robot.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/RobotMap.o \
@@ -217,6 +222,10 @@ CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/A
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
+CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/DriveForDistance.o : $(PRJ_ROOT_DIR)/Commands/DriveForDistance.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/OI.o : $(PRJ_ROOT_DIR)/OI.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
@@ -237,6 +246,7 @@ OBJECTS_CommandBassedRobotTemplate_partialImage = CommandBassedRobotTemplate_par
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/ArcadeDriveWithJoysticks.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/Auton0DoNothing.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/Auton1MobilityBonus.o \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/DriveForDistance.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/OI.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Robot.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/RobotMap.o \
@@ -255,11 +265,11 @@ CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/CommandBassedRobotTemplate_p
 force : 
 
 DEP_FILES := CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/ArcadeDriveWithInputs.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/ArcadeDriveWithJoysticks.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/Auton0DoNothing.d \
-	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/Auton1MobilityBonus.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/OI.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Robot.d \
-	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/RobotMap.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Subsystems/Drivetrain.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/ArcadeDriveWithInputs.d \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/ArcadeDriveWithJoysticks.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/Auton0DoNothing.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/Auton1MobilityBonus.d \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/OI.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Robot.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/RobotMap.d \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Subsystems/Drivetrain.d
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/Auton1MobilityBonus.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/DriveForDistance.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/OI.d \
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Robot.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/RobotMap.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Subsystems/Drivetrain.d \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/ArcadeDriveWithInputs.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/ArcadeDriveWithJoysticks.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/Auton0DoNothing.d \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/Auton1MobilityBonus.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/DriveForDistance.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/OI.d \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Robot.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/RobotMap.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Subsystems/Drivetrain.d
 -include $(DEP_FILES)
 
 
