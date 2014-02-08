@@ -1,0 +1,30 @@
+<xml version="1.0">
+<dashboard>
+	<widget field="I" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="232"/>
+	</widget>
+	<widget field="P" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="211"/>
+	</widget>
+	<widget field="PID Output" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="190"/>
+	</widget>
+	<widget field="Gyro Heading" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="169"/>
+	</widget>
+	<widget field="Autonomous Routine" type="String Chooser" class="edu.wpi.first.smartdashboard.gui.elements.Chooser">
+		<location x="0" y="102"/>
+	</widget>
+	<widget field="ArcadeDriveWithJoysticks" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="68"/>
+	</widget>
+	<widget field="Auton 1 Mobility Bonus" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="34"/>
+	</widget>
+	<widget field="Auton 0 Do Nothing" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="0"/>
+	</widget>
+</dashboard>
+<live-window>
+</live-window>
+</xml>
