@@ -21,7 +21,7 @@ void ArcadeDriveWithJoysticks::Initialize() {
 }
 // Called repeatedly when this Command is scheduled to run
 void ArcadeDriveWithJoysticks::Execute() {
-	Robot::drivetrain->ArcadeDriveWithParameters(Robot::oi->getJoystickLeft()->GetY(),Robot::oi->getJoystickRight()->GetX());
+	Robot::drivetrain->ArcadeDriveWithParameters(-Robot::oi->getJoystickLeft()->GetY(),Robot::oi->getJoystickRight()->GetX());
 	SmartDashboard::PutNumber("Gyro Heading",Robot::drivetrain->gyro->GetAngle());
 }
 // Make this return true when this Command no longer needs to run execute()
@@ -30,9 +30,10 @@ bool ArcadeDriveWithJoysticks::IsFinished() {
 }
 // Called once after isFinished returns true
 void ArcadeDriveWithJoysticks::End() {
-	
+	Robot::drivetrain->ArcadeDriveWithParameters(Robot::oi->getJoystickLeft()->GetY(),Robot::oi->getJoystickRight()->GetX());
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
 void ArcadeDriveWithJoysticks::Interrupted() {
+	End();
 }
