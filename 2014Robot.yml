@@ -299,6 +299,99 @@ Children:
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Default Command, type: Command, validators: null, value: None}
+  - Name: Launcher
+    Base: Subsystem
+    Children:
+    - Name: Winch Down Switch
+      Base: Digital Input
+      Children: []
+      Properties:
+        Input Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
+          choices: &id024 ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11',
+            '12', '13', '14']
+          default: '1'
+          name: Input Channel (Digital)
+          validators: &id025 [DigitalChannel]
+          value: '5'
+        Input Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
+          choices: &id026 ['1', '2']
+          default: '1'
+          name: Input Module (Digital)
+          validators: &id027 [DigitalChannel]
+          value: '1'
+    - Name: Winch Up Switch
+      Base: Digital Input
+      Children: []
+      Properties:
+        Input Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id024
+          default: '1'
+          name: Input Channel (Digital)
+          validators: *id025
+          value: '6'
+        Input Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id026
+          default: '1'
+          name: Input Module (Digital)
+          validators: *id027
+          value: '1'
+    - Name: Ball Sensor
+      Base: Analog Input
+      Children: []
+      Properties:
+        Input Module (Analog): !!robotbuilder.data.properties.ChoicesProperty
+          choices: ['1', '2']
+          default: '1'
+          name: Input Module (Analog)
+          validators: [AnalogInput]
+          value: '1'
+        Input Channel (Analog): !!robotbuilder.data.properties.ChoicesProperty
+          choices: ['1', '2', '3', '4', '5', '6', '7', '8']
+          default: '1'
+          name: Input Channel (Analog)
+          validators: [AnalogInput]
+          value: '2'
+    - Name: Winch Motors
+      Base: Speed Controller
+      Children: []
+      Properties:
+        Output Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id001
+          default: '1'
+          name: Output Module (Digital)
+          validators: *id002
+          value: '1'
+        Type: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id003
+          default: Victor
+          name: Type
+          validators: null
+          value: Talon
+        Output Channel (PWM): !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id004
+          default: '1'
+          name: Output Channel (PWM)
+          validators: *id005
+          value: '4'
+    - Name: Latch
+      Base: Solenoid
+      Children: []
+      Properties:
+        Output Module (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
+          choices: ['1', '2']
+          default: '1'
+          name: Output Module (Solenoid)
+          validators: [Solenoid]
+          value: '1'
+        Output Channel (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
+          choices: ['1', '2', '3', '4', '5', '6', '7', '8']
+          default: '1'
+          name: Output Channel (Solenoid)
+          validators: [Solenoid]
+          value: '5'
+    Properties:
+      Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Default Command, type: Command, validators: null, value: None}
   Properties: {}
 - Name: Operator Interface
   Base: OI
@@ -308,20 +401,20 @@ Children:
     Children: []
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
-        choices: &id024 ['1', '2', '3', '4']
+        choices: &id028 ['1', '2', '3', '4']
         default: 1
         name: Number
-        validators: &id025 [Joystick]
+        validators: &id029 [Joystick]
         value: '1'
   - Name: Joystick Right
     Base: Joystick
     Children: []
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id024
+        choices: *id028
         default: 1
         name: Number
-        validators: *id025
+        validators: *id029
         value: '2'
   Properties: {}
 - Name: Commands
