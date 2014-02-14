@@ -25,8 +25,8 @@ void Arm::InitDefaultCommand() {
 }
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
-void Arm::MoveArmToPosition(bool isOut) {
-	if (isOut) {
+void Arm::MoveArmToPosition(bool out) {
+	if (out) {
 		armSolenoid->Set(DoubleSolenoid::kForward);
 	} else {
 		armSolenoid->Set(DoubleSolenoid::kReverse);

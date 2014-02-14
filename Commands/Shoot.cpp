@@ -34,15 +34,25 @@ Shoot::Shoot() {
 	// a CommandGroup containing them would require both the chassis and the
 	// arm.
 	
-	if (Robot::arm->IsArmOut() && Robot::launcher->IsWinchUp()) {
-		AddSequential(new ReleaseLatch());
-		
-		if (!(Robot::launcher->IsWinchDown())) {
+//	if (Robot::arm->IsArmOut() && Robot::launcher->IsWinchUp()) {
+//		AddSequential(new ReleaseLatch());
+//		
+//		if (!(Robot::launcher->IsShooterArmDown())) {
+//			AddSequential(new WinchLauncherDown());
+//		}
+//		
+//		if (!(Robot::launcher->IsWinchUp())) {
+//			AddSequential(new UnwindWinch()); // We will need a timeout on this
+//		}
+//	}
+	
+	if (Robot::arm->IsArmOut()){
+		if (!Robot::launcher->IsShooterArmDown()) {
 			AddSequential(new WinchLauncherDown());
 		}
-		
-		if (!(Robot::launcher->IsWinchUp())) {
-			AddSequential(new UnwindWinch()); // We will need a timeout on this
+		if (!Robot::launcher->IsWinchUp()) {
+			AddSequential(new UnwindWinch());
 		}
+		AddSequential(new ReleaseLatch());
 	}
 }

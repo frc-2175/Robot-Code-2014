@@ -29,7 +29,7 @@ void Launcher::InitDefaultCommand() {
 }
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
-bool Launcher::IsWinchDown() {
+bool Launcher::IsShooterArmDown() {
 	
 	return (bool)(latchSwitch->Get());
 	
