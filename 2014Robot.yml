@@ -452,7 +452,7 @@ Children:
           default: '1'
           name: Spike Channel (Relay)
           validators: [RelayOutput]
-          value: '1'
+          value: '3'
         Spike Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
           choices: ['1', '2']
           default: '1'
