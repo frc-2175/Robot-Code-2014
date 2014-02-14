@@ -25,7 +25,7 @@ void WinchLauncherDown::Execute() {
 }
 // Make this return true when this Command no longer needs to run execute()
 bool WinchLauncherDown::IsFinished() {
-	return Robot::launcher->IsWinchDown();
+	return Robot::launcher->IsShooterArmDown();
 }
 // Called once after isFinished returns true
 void WinchLauncherDown::End() {
