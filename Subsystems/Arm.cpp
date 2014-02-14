@@ -37,5 +37,5 @@ void Arm::RunRollerBarAtSpeed(float speed) {
 	rollerBar->Set(speed);
 }
 bool Arm::IsArmOut() {
-	return (bool)(armOutSwitch1->Get() || armOutSwitch2->Get());
+	return !(bool)armOutSwitch1->Get() || !(bool)armOutSwitch2->Get(); // The switches read 1 when the arm is NOT out. We need to typecast these values to bool and invert them before doing logic on them.
 }
