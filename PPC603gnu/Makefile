@@ -153,6 +153,10 @@ CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/ReleaseLatch.o 
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
+CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/RunFakeCompressor.o : $(PRJ_ROOT_DIR)/Commands/RunFakeCompressor.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/RunRollerBar.o : $(PRJ_ROOT_DIR)/Commands/RunRollerBar.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
@@ -193,15 +197,15 @@ CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Subsystems/Arm.o : $(PRJ
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
+CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Subsystems/CompresserSubsystem.o : $(PRJ_ROOT_DIR)/Subsystems/CompresserSubsystem.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Subsystems/Drivetrain.o : $(PRJ_ROOT_DIR)/Subsystems/Drivetrain.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Subsystems/Launcher.o : $(PRJ_ROOT_DIR)/Subsystems/Launcher.cpp $(FORCE_FILE_BUILD)
-	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
-
-
-CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Subsystems/TheCompressor.o : $(PRJ_ROOT_DIR)/Subsystems/TheCompressor.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
@@ -214,6 +218,7 @@ OBJECTS_CommandBasedRobotTemplate = CommandBasedRobotTemplate/$(MODE_DIR)/Object
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/MoveArmIn.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/MoveArmOut.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/ReleaseLatch.o \
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/RunFakeCompressor.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/RunRollerBar.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/RunRollerBarBackwards.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/ShiftToHighGear.o \
@@ -224,9 +229,9 @@ OBJECTS_CommandBasedRobotTemplate = CommandBasedRobotTemplate/$(MODE_DIR)/Object
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Robot.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/RobotMap.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Subsystems/Arm.o \
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Subsystems/CompresserSubsystem.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Subsystems/Drivetrain.o \
-	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Subsystems/Launcher.o \
-	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Subsystems/TheCompressor.o
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Subsystems/Launcher.o
 
 CommandBasedRobotTemplate/$(MODE_DIR)/CommandBasedRobotTemplate.out : $(OBJECTS_CommandBasedRobotTemplate)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@";rm -f "$@";nmppc $(OBJECTS_CommandBasedRobotTemplate) $(IDE_LIBRARIES) | tclsh $(WIND_BASE)/host/resource/hutils/tcl/munch.tcl -c ppc > $(OBJ_DIR)/ctdt.c; $(TOOL_PATH)ccppc $(DEBUGFLAGS_Linker) $(CC_ARCH_SPEC) -fdollars-in-identifiers -Wall $(ADDED_CFLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES)  -o $(OBJ_DIR)/ctdt.o -c $(OBJ_DIR)/ctdt.c; $(TOOL_PATH)ccppc -r -nostdlib -Wl,-X -T $(WIND_BASE)/target/h/tool/gnu/ldscripts/link.OUT -o "$@" $(OBJ_DIR)/ctdt.o $(OBJECTS_CommandBasedRobotTemplate) $(IDE_LIBRARIES) $(LIBPATH) $(LIBS)  $(ADDED_LIBPATH) $(ADDED_LIBS) && if [ "$(EXPAND_DBG)" = "1" ]; then plink "$@";fi
@@ -307,6 +312,10 @@ CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/R
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
+CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/RunFakeCompressor.o : $(PRJ_ROOT_DIR)/Commands/RunFakeCompressor.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/RunRollerBar.o : $(PRJ_ROOT_DIR)/Commands/RunRollerBar.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
@@ -347,15 +356,15 @@ CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Subsystems
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
+CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Subsystems/CompresserSubsystem.o : $(PRJ_ROOT_DIR)/Subsystems/CompresserSubsystem.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Subsystems/Drivetrain.o : $(PRJ_ROOT_DIR)/Subsystems/Drivetrain.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Subsystems/Launcher.o : $(PRJ_ROOT_DIR)/Subsystems/Launcher.cpp $(FORCE_FILE_BUILD)
-	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
-
-
-CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Subsystems/TheCompressor.o : $(PRJ_ROOT_DIR)/Subsystems/TheCompressor.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
@@ -368,6 +377,7 @@ OBJECTS_CommandBassedRobotTemplate_partialImage = CommandBassedRobotTemplate_par
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/MoveArmIn.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/MoveArmOut.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/ReleaseLatch.o \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/RunFakeCompressor.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/RunRollerBar.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/RunRollerBarBackwards.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/ShiftToHighGear.o \
@@ -378,9 +388,9 @@ OBJECTS_CommandBassedRobotTemplate_partialImage = CommandBassedRobotTemplate_par
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Robot.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/RobotMap.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Subsystems/Arm.o \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Subsystems/CompresserSubsystem.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Subsystems/Drivetrain.o \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Subsystems/Launcher.o \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Subsystems/TheCompressor.o
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Subsystems/Launcher.o
 
 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/CommandBassedRobotTemplate_partialImage.o : $(OBJECTS_CommandBassedRobotTemplate_partialImage)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc -r -nostdlib -Wl,-X  -o "$@" $(OBJECTS_CommandBassedRobotTemplate_partialImage) $(LIBPATH) $(LIBS) $(ADDED_LIBPATH) $(ADDED_LIBS)  && if [ "$(EXPAND_DBG)" = "1" ]; then plink "$@";fi
@@ -397,18 +407,19 @@ force :
 DEP_FILES := CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/ArcadeDriveWithInputs.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/ArcadeDriveWithJoysticks.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/Auton0DoNothing.d \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/Auton1MobilityBonus.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/DriveForDistance.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/DriveToAngle.d \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/MoveArmIn.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/MoveArmOut.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/ReleaseLatch.d \
-	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/RunRollerBar.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/RunRollerBarBackwards.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/ShiftToHighGear.d \
-	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/Shoot.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/UnwindWinch.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/WinchLauncherDown.d \
-	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/OI.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Robot.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/RobotMap.d \
-	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Subsystems/Arm.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Subsystems/Drivetrain.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Subsystems/Launcher.d \
-	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Subsystems/TheCompressor.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/ArcadeDriveWithInputs.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/ArcadeDriveWithJoysticks.d \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/Auton0DoNothing.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/Auton1MobilityBonus.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/DriveForDistance.d \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/DriveToAngle.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/MoveArmIn.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/MoveArmOut.d \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/ReleaseLatch.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/RunRollerBar.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/RunRollerBarBackwards.d \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/ShiftToHighGear.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/Shoot.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/UnwindWinch.d \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/WinchLauncherDown.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/OI.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Robot.d \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/RobotMap.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Subsystems/Arm.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Subsystems/Drivetrain.d \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Subsystems/Launcher.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Subsystems/TheCompressor.d
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/RunFakeCompressor.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/RunRollerBar.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/RunRollerBarBackwards.d \
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/ShiftToHighGear.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/Shoot.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/UnwindWinch.d \
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/WinchLauncherDown.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/OI.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Robot.d \
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/RobotMap.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Subsystems/Arm.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Subsystems/CompresserSubsystem.d \
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Subsystems/Drivetrain.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Subsystems/Launcher.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/ArcadeDriveWithInputs.d \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/ArcadeDriveWithJoysticks.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/Auton0DoNothing.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/Auton1MobilityBonus.d \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/DriveForDistance.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/DriveToAngle.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/MoveArmIn.d \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/MoveArmOut.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/ReleaseLatch.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/RunFakeCompressor.d \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/RunRollerBar.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/RunRollerBarBackwards.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/ShiftToHighGear.d \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/Shoot.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/UnwindWinch.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/WinchLauncherDown.d \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/OI.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Robot.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/RobotMap.d \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Subsystems/Arm.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Subsystems/CompresserSubsystem.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Subsystems/Drivetrain.d \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Subsystems/Launcher.d
 -include $(DEP_FILES)
 
 

@@ -38,6 +38,10 @@ void Drivetrain::InitDefaultCommand() {
 // here. Call these from Commands.
 void Drivetrain::ArcadeDriveWithParameters(float forward, float turning) {
 	robotDrive->ArcadeDrive(forward, turning, false);
+	SmartDashboard::PutNumber("Shooter Down", (double)Robot::launcher->latchSwitch->Get());
+	SmartDashboard::PutNumber("Shooter Up", (double)Robot::launcher->winchUpSwitch->Get());
+//	fakeCompressor->Set(1);
+	
 }
 void Drivetrain::ShiftToGear(bool isHigh) {
 	if (isHigh) {

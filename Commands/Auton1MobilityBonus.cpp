@@ -13,7 +13,7 @@
 #include "Auton1MobilityBonus.h"
 
 #include "ArcadeDriveWithInputs.h"
-#include "DriveToAngle.h"
+#include "DriveForDistance.h"
 
 Auton1MobilityBonus::Auton1MobilityBonus() {
 	// Add Commands here:
@@ -35,6 +35,5 @@ Auton1MobilityBonus::Auton1MobilityBonus() {
 	
 	// AddSequential(new ArcadeDriveWithInputs(0.75,0,1));
 	
-	AddSequential(new DriveToAngle(45));
-	AddSequential(new DriveToAngle(-45));
+	AddSequential(new DriveForDistance(4));
 }
