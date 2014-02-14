@@ -53,6 +53,11 @@ Shoot::Shoot() {
 		if (!Robot::launcher->IsWinchUp()) {
 			AddSequential(new UnwindWinch());
 		}
+		//Actually shoot
 		AddSequential(new ReleaseLatch());
+		//FIX THE DELAY!!! Delay(500);
+		//Prepare for next shot
+		AddSequential(new WinchLauncherDown());
+		AddSequential(new UnwindWinch());
 	}
 }
