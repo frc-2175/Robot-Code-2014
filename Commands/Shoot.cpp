@@ -15,6 +15,8 @@
 #include "WinchLauncherDown.h"
 #include "UnwindWinch.h"
 #include "ReleaseLatch.h"
+#include "MoveArmOut.h"
+#include "Delay.h"
 
 Shoot::Shoot() {
 	// Add Commands here:
@@ -34,18 +36,6 @@ Shoot::Shoot() {
 	// a CommandGroup containing them would require both the chassis and the
 	// arm.
 	
-//	if (Robot::arm->IsArmOut() && Robot::launcher->IsWinchUp()) {
-//		AddSequential(new ReleaseLatch());
-//		
-//		if (!(Robot::launcher->IsShooterArmDown())) {
-//			AddSequential(new WinchLauncherDown());
-//		}
-//		
-//		if (!(Robot::launcher->IsWinchUp())) {
-//			AddSequential(new UnwindWinch()); // We will need a timeout on this
-//		}
-//	}
-	
 	if (Robot::arm->IsArmOut()){
 		if (!Robot::launcher->IsShooterArmDown()) {
 			AddSequential(new WinchLauncherDown());
@@ -54,9 +44,15 @@ Shoot::Shoot() {
 			AddSequential(new UnwindWinch());
 		}
 		//Actually shoot
-		AddSequential(new ReleaseLatch());
-		//FIX THE DELAY!!! Delay(500);
+		if (Robot::arm->IsArmOut()) AddSequential(new ReleaseLatch());
+		AddSequential(new Delay(2));
 		//Prepare for next shot
+		if (Robot::arm->IsArmOut()) {
+			AddSequential(new WinchLauncherDown());
+			AddSequential(new UnwindWinch());
+		} else {
+			AddSequential(new MoveArmOut());
+		}
 		AddSequential(new WinchLauncherDown());
 		AddSequential(new UnwindWinch());
 	}

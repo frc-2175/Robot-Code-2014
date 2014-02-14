@@ -9,8 +9,8 @@
 // it from being updated in th future.
 
 
-#ifndef RUNFAKECOMPRESSOR_H
-#define RUNFAKECOMPRESSOR_H
+#ifndef DELAY_H
+#define DELAY_H
 
 
 #include "Commands/Subsystem.h"
@@ -21,9 +21,9 @@
  *
  * @author ExampleAuthor
  */
-class RunFakeCompressor: public Command {
+class Delay: public Command {
 public:
-	RunFakeCompressor();
+	Delay(float seconds);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
