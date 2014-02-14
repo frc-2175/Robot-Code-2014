@@ -38,6 +38,8 @@ void Robot::RobotInit() {
 	autoChooser = new SendableChooser();
 	autoChooser->AddDefault("0 - No Action", new Auton0DoNothing());
 	autoChooser->AddObject("1 - Mobility Bonus", new Auton1MobilityBonus());
+	autoChooser->AddObject("2 - Blind Shot", new Auton2BlindShot());
+	autoChooser->AddObject("3 - Double Blind Shot", new Auton3DoubleBlindShot());
 //	autoChooser->AddObject("2 - Low Goal, Mobility Bonus", /* tbd */);
 //	autoChooser->AddObject("3 - High Goal, Mobility Bonus", /* tbd */);
 //	autoChooser->AddObject("4 - Hot Goal, Mobility Bonus", /* tbd */);

@@ -10,12 +10,14 @@
 
 
 
-#include "Auton1MobilityBonus.h"
+#include "Auton3DoubleBlindShot.h"
 
-#include "ArcadeDriveWithInputs.h"
+#include "MoveArmOut.h"
+#include "Shoot.h"
 #include "DriveForDistance.h"
+#include "RunRollerBar.h"
 
-Auton1MobilityBonus::Auton1MobilityBonus() {
+Auton3DoubleBlindShot::Auton3DoubleBlindShot() {
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());
 	//      AddSequential(new Command2());
@@ -33,7 +35,16 @@ Auton1MobilityBonus::Auton1MobilityBonus() {
 	// a CommandGroup containing them would require both the chassis and the
 	// arm.
 	
-	// AddSequential(new ArcadeDriveWithInputs(0.75,0,1));
+	AddSequential(new MoveArmOut());
 	
-	AddSequential(new DriveForDistance(4)); // Could do this with time delay
+	AddSequential(new Shoot(),3);
+	
+	if (Robot::launcher->IsShooterArmDown() && Robot::launcher->IsWinchUp()) {
+		AddSequential(new RunRollerBar(),3); // on failure, we need to drive forward
+		if (true /* !isThereABall */) {
+			AddSequential(new Shoot(),3);
+		}
+	}
+	
+	AddSequential(new DriveForDistance(4)); // could do this with time delay
 }

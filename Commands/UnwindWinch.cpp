@@ -21,7 +21,7 @@ void UnwindWinch::Initialize() {
 }
 // Called repeatedly when this Command is scheduled to run
 void UnwindWinch::Execute() {
-	Robot::launcher->RunWinchAtSpeed(-0.2);
+	Robot::launcher->RunWinchAtSpeed(-0.6);
 }
 // Make this return true when this Command no longer needs to run execute()
 bool UnwindWinch::IsFinished() {

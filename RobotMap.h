@@ -27,9 +27,11 @@ public:
 	static SpeedController* drivetrainMagicPIDOutput;
 	static Gyro* drivetrainGyro;
 	static DoubleSolenoid* drivetrainShifters;
+	static Relay* drivetrainTestSpike;
 	static DoubleSolenoid* armArmSolenoid;
 	static SpeedController* armRollerBar;
-	static DigitalInput* armArmOutSwitch;
+	static DigitalInput* armArmOutSwitch1;
+	static DigitalInput* armArmOutSwitch2;
 	static DigitalInput* launcherLatchSwitch;
 	static DigitalInput* launcherWinchUpSwitch;
 	static AnalogChannel* launcherBallSensor;

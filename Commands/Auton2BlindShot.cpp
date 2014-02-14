@@ -10,12 +10,13 @@
 
 
 
-#include "Auton1MobilityBonus.h"
+#include "Auton2BlindShot.h"
 
-#include "ArcadeDriveWithInputs.h"
+#include "MoveArmOut.h"
+#include "Shoot.h"
 #include "DriveForDistance.h"
 
-Auton1MobilityBonus::Auton1MobilityBonus() {
+Auton2BlindShot::Auton2BlindShot() {
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());
 	//      AddSequential(new Command2());
@@ -33,7 +34,9 @@ Auton1MobilityBonus::Auton1MobilityBonus() {
 	// a CommandGroup containing them would require both the chassis and the
 	// arm.
 	
-	// AddSequential(new ArcadeDriveWithInputs(0.75,0,1));
+	AddSequential(new MoveArmOut());
 	
-	AddSequential(new DriveForDistance(4)); // Could do this with time delay
+	AddSequential(new Shoot(),8);
+	
+	AddSequential(new DriveForDistance(4)); // could do this with time delay
 }

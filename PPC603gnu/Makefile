@@ -133,6 +133,14 @@ CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/Auton1MobilityB
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
+CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/Auton2BlindShot.o : $(PRJ_ROOT_DIR)/Commands/Auton2BlindShot.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
+CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/Auton3DoubleBlindShot.o : $(PRJ_ROOT_DIR)/Commands/Auton3DoubleBlindShot.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/Delay.o : $(PRJ_ROOT_DIR)/Commands/Delay.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
@@ -170,6 +178,10 @@ CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/ShiftToHighGear
 
 
 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/Shoot.o : $(PRJ_ROOT_DIR)/Commands/Shoot.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
+CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/TurnTestSpikeOn.o : $(PRJ_ROOT_DIR)/Commands/TurnTestSpikeOn.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
@@ -213,6 +225,8 @@ OBJECTS_CommandBasedRobotTemplate = CommandBasedRobotTemplate/$(MODE_DIR)/Object
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/ArcadeDriveWithJoysticks.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/Auton0DoNothing.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/Auton1MobilityBonus.o \
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/Auton2BlindShot.o \
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/Auton3DoubleBlindShot.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/Delay.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/DriveForDistance.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/DriveToAngle.o \
@@ -223,6 +237,7 @@ OBJECTS_CommandBasedRobotTemplate = CommandBasedRobotTemplate/$(MODE_DIR)/Object
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/RunRollerBarBackwards.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/ShiftToHighGear.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/Shoot.o \
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/TurnTestSpikeOn.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/UnwindWinch.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/WinchLauncherDown.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/OI.o \
@@ -292,6 +307,14 @@ CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/A
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
+CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/Auton2BlindShot.o : $(PRJ_ROOT_DIR)/Commands/Auton2BlindShot.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
+CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/Auton3DoubleBlindShot.o : $(PRJ_ROOT_DIR)/Commands/Auton3DoubleBlindShot.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/Delay.o : $(PRJ_ROOT_DIR)/Commands/Delay.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
@@ -329,6 +352,10 @@ CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/S
 
 
 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/Shoot.o : $(PRJ_ROOT_DIR)/Commands/Shoot.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
+CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/TurnTestSpikeOn.o : $(PRJ_ROOT_DIR)/Commands/TurnTestSpikeOn.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
@@ -372,6 +399,8 @@ OBJECTS_CommandBassedRobotTemplate_partialImage = CommandBassedRobotTemplate_par
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/ArcadeDriveWithJoysticks.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/Auton0DoNothing.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/Auton1MobilityBonus.o \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/Auton2BlindShot.o \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/Auton3DoubleBlindShot.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/Delay.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/DriveForDistance.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/DriveToAngle.o \
@@ -382,6 +411,7 @@ OBJECTS_CommandBassedRobotTemplate_partialImage = CommandBassedRobotTemplate_par
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/RunRollerBarBackwards.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/ShiftToHighGear.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/Shoot.o \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/TurnTestSpikeOn.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/UnwindWinch.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/WinchLauncherDown.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/OI.o \
@@ -405,18 +435,20 @@ CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/CommandBassedRobotTemplate_p
 force : 
 
 DEP_FILES := CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/ArcadeDriveWithInputs.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/ArcadeDriveWithJoysticks.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/Auton0DoNothing.d \
-	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/Auton1MobilityBonus.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/Delay.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/DriveForDistance.d \
-	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/DriveToAngle.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/MoveArmIn.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/MoveArmOut.d \
-	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/ReleaseLatch.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/RunRollerBar.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/RunRollerBarBackwards.d \
-	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/ShiftToHighGear.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/Shoot.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/UnwindWinch.d \
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/Auton1MobilityBonus.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/Auton2BlindShot.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/Auton3DoubleBlindShot.d \
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/Delay.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/DriveForDistance.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/DriveToAngle.d \
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/MoveArmIn.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/MoveArmOut.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/ReleaseLatch.d \
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/RunRollerBar.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/RunRollerBarBackwards.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/ShiftToHighGear.d \
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/Shoot.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/TurnTestSpikeOn.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/UnwindWinch.d \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Commands/WinchLauncherDown.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/OI.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Robot.d \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/RobotMap.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Subsystems/Arm.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Subsystems/CompresserSubsystem.d \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Subsystems/Drivetrain.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/2014Robot/Subsystems/Launcher.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/ArcadeDriveWithInputs.d \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/ArcadeDriveWithJoysticks.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/Auton0DoNothing.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/Auton1MobilityBonus.d \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/Delay.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/DriveForDistance.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/DriveToAngle.d \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/MoveArmIn.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/MoveArmOut.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/ReleaseLatch.d \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/RunRollerBar.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/RunRollerBarBackwards.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/ShiftToHighGear.d \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/Shoot.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/UnwindWinch.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/WinchLauncherDown.d \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/Auton2BlindShot.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/Auton3DoubleBlindShot.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/Delay.d \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/DriveForDistance.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/DriveToAngle.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/MoveArmIn.d \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/MoveArmOut.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/ReleaseLatch.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/RunRollerBar.d \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/RunRollerBarBackwards.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/ShiftToHighGear.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/Shoot.d \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/TurnTestSpikeOn.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/UnwindWinch.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Commands/WinchLauncherDown.d \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/OI.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Robot.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/RobotMap.d \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Subsystems/Arm.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Subsystems/CompresserSubsystem.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Subsystems/Drivetrain.d \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/2014Robot/Subsystems/Launcher.d

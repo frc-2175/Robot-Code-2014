@@ -31,11 +31,11 @@ void Launcher::InitDefaultCommand() {
 // here. Call these from Commands.
 bool Launcher::IsShooterArmDown() {
 	
-	return (bool)(latchSwitch->Get());
+	return !((bool)(latchSwitch->Get()));
 	
 }
 bool Launcher::IsWinchUp() {
-	return (bool)(winchUpSwitch->Get());
+	return !((bool)(winchUpSwitch->Get()));
 }
 bool Launcher::IsBall() {
 	if (ballSensor->GetAverageValue() > 100) { /* Whatever threshold indicates a ball */
