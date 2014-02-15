@@ -17,8 +17,8 @@ private:
 	JoystickButton* shootAndReload;
 	JoystickButton* intakeWheelsBackwards;
 	JoystickButton* intakeWheelsForward;
-	JoystickButton* rollerBarIn;
-	JoystickButton* rollerBarOut;
+	JoystickButton* armOut;
+	JoystickButton* armIn;
 	Joystick* joystickRight;
 	JoystickButton* commandShiftButton;
 	Joystick* joystickLeft;

@@ -44,12 +44,12 @@ OI::OI() {
 	shootAndReload->WhenPressed(new Shoot());
 	intakeWheelsBackwards = new JoystickButton(gamepad, 5);
 	intakeWheelsBackwards->WhileHeld(new RunRollerBarBackwards());
-	intakeWheelsForward = new JoystickButton(gamepad, 6);
+	intakeWheelsForward = new JoystickButton(gamepad, 7);
 	intakeWheelsForward->WhileHeld(new RunRollerBar());
-	rollerBarIn = new JoystickButton(gamepad, 1);
-	rollerBarIn->WhenReleased(new MoveArmIn());
-	rollerBarOut = new JoystickButton(gamepad, 1);
-	rollerBarOut->WhenPressed(new MoveArmOut());
+	armOut = new JoystickButton(gamepad, 1);
+	armOut->WhenPressed(new MoveArmOut());
+	armIn = new JoystickButton(gamepad, 4);
+	armIn->WhenPressed(new MoveArmIn());
 	joystickRight = new Joystick(2);
 	
 	commandShiftButton = new JoystickButton(joystickRight, 1);

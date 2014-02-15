@@ -12,6 +12,8 @@
 
 #include "Auton5HotGoal.h"
 
+#include "Delay.h"
+
 Auton5HotGoal::Auton5HotGoal() {
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());

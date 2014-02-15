@@ -383,22 +383,6 @@ Children:
           name: Input Module (Digital)
           validators: *id027
           value: '1'
-    - Name: Ball Sensor
-      Base: Analog Input
-      Children: []
-      Properties:
-        Input Module (Analog): !!robotbuilder.data.properties.ChoicesProperty
-          choices: ['1', '2']
-          default: '1'
-          name: Input Module (Analog)
-          validators: [AnalogInput]
-          value: '1'
-        Input Channel (Analog): !!robotbuilder.data.properties.ChoicesProperty
-          choices: ['1', '2', '3', '4', '5', '6', '7', '8']
-          default: '1'
-          name: Input Channel (Analog)
-          validators: [AnalogInput]
-          value: '2'
     - Name: Winch Motor
       Base: Speed Controller
       Children: []
@@ -421,6 +405,22 @@ Children:
           name: Output Channel (PWM)
           validators: *id005
           value: '3'
+    - Name: Ball Sensor
+      Base: Analog Input
+      Children: []
+      Properties:
+        Input Module (Analog): !!robotbuilder.data.properties.ChoicesProperty
+          choices: ['1', '2']
+          default: '1'
+          name: Input Module (Analog)
+          validators: [AnalogInput]
+          value: '1'
+        Input Channel (Analog): !!robotbuilder.data.properties.ChoicesProperty
+          choices: ['1', '2', '3', '4', '5', '6', '7', '8']
+          default: '1'
+          name: Input Channel (Analog)
+          validators: [AnalogInput]
+          value: '2'
     - Name: Latch
       Base: Solenoid
       Children: []
@@ -527,7 +527,31 @@ Children:
   - Name: Gamepad
     Base: Joystick
     Children:
-    - Name: RollerBarOut
+    - Name: ArmIn
+      Base: Joystick Button
+      Children: []
+      Properties:
+        Command: !!robotbuilder.data.properties.TypeSelectionProperty
+          default: None
+          name: Command
+          type: Command
+          validators: *id030
+          value: MoveArmIn
+        Button: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id031
+          default: '1'
+          name: Button
+          validators: null
+          value: '4'
+        Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
+          name: Joystick, validators: null, value: Gamepad}
+        When to Run: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id032
+          default: whileHeld
+          name: When to Run
+          validators: null
+          value: whenPressed
+    - Name: ArmOut
       Base: Joystick Button
       Children: []
       Properties:
@@ -551,30 +575,6 @@ Children:
           name: When to Run
           validators: null
           value: whenPressed
-    - Name: RollerBarIn
-      Base: Joystick Button
-      Children: []
-      Properties:
-        Command: !!robotbuilder.data.properties.TypeSelectionProperty
-          default: None
-          name: Command
-          type: Command
-          validators: *id030
-          value: MoveArmIn
-        Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id031
-          default: '1'
-          name: Button
-          validators: null
-          value: '1'
-        Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
-          name: Joystick, validators: null, value: Gamepad}
-        When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id032
-          default: whileHeld
-          name: When to Run
-          validators: null
-          value: whenReleased
     - Name: IntakeWheelsForward
       Base: Joystick Button
       Children: []
@@ -590,7 +590,7 @@ Children:
           default: '1'
           name: Button
           validators: null
-          value: '6'
+          value: '7'
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
           name: Joystick, validators: null, value: Gamepad}
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
@@ -718,7 +718,7 @@ Children:
         name: Requires, type: Subsystem, validators: null, value: None}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: false}
-  - Name: Command 1
+  - Name: Wait For Hot Goal
     Base: Command
     Children: []
     Properties:
