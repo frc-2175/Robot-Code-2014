@@ -1,0 +1,87 @@
+<head><version>2.58.11</version></head>
+<Read_HTTP>
+  <erase_on_error>TRUE</erase_on_error>
+  <is_active>TRUE</is_active>
+  <timeout>1000</timeout>
+  <url>http://10.21.75.11/mjpg/video.mjpg</url>
+</Read_HTTP>
+<RGB_Filter>
+  <channel>2</channel>
+  <hue_value>50</hue_value>
+  <hysteresis>0</hysteresis>
+  <min_value>100</min_value>
+  <result_type>2</result_type>
+</RGB_Filter>
+<Shape_Match>
+  <absent_after_frames>0</absent_after_frames>
+  <base_folder>C:\Program Files (x86)\RoboRealm\Objects\TestGoal</base_folder>
+  <color_index>2</color_index>
+  <create_shape_array>TRUE</create_shape_array>
+  <display_box>TRUE</display_box>
+  <display_confidence>TRUE</display_confidence>
+  <display_coord>TRUE</display_coord>
+  <display_filename>FALSE</display_filename>
+  <display_orientation>TRUE</display_orientation>
+  <display_result>-1</display_result>
+  <display_size>TRUE</display_size>
+  <font_size_index>-1</font_size_index>
+  <high_resolution_orientation>FALSE</high_resolution_orientation>
+  <is_mirrored_invariant>FALSE</is_mirrored_invariant>
+  <is_rotational_invariant>FALSE</is_rotational_invariant>
+  <max_angle>360</max_angle>
+  <max_confidence>100</max_confidence>
+  <max_size>1000</max_size>
+  <min_angle>0</min_angle>
+  <min_confidence>70</min_confidence>
+  <min_size>10</min_size>
+  <monitor_folder>FALSE</monitor_folder>
+  <overlay_image>Current</overlay_image>
+  <present_after_frames>0</present_after_frames>
+  <select_top_blobs>100</select_top_blobs>
+  <sort_array_on_x>FALSE</sort_array_on_x>
+  <sort_array_on_y>FALSE</sort_array_on_y>
+</Shape_Match>
+<VBScript_Program>
+  <script>if ubound(GetArrayVariable("SHAPES")) &gt; 0 then
+	isRect = True
+	
+	' Get coordinates of bounding box
+	minX = GetVariable("SHAPES:3")
+	maxX = GetVariable("SHAPES:4")
+	minY = GetVariable("SHAPES:5")
+	maxY = GetVariable("SHAPES:6")
+	
+	' Change coordinates to center origin, -1 to 1
+	minX = (minX - GetVariable("IMAGE_WIDTH")/2) / (GetVariable("IMAGE_WIDTH")/2)
+	maxX = (maxX - GetVariable("IMAGE_WIDTH")/2) / (GetVariable("IMAGE_WIDTH")/2)
+	minY = (minY - GetVariable("IMAGE_HEIGHT")/2) / (GetVariable("IMAGE_HEIGHT")/2)
+	maxY = (maxY - GetVariable("IMAGE_HEIGHT")/2) / (GetVariable("IMAGE_HEIGHT")/2)
+else
+	isRect = False
+	minX = 0
+	maxX = 0
+	minY = 0
+	maxY = 0
+end if
+
+' Set the variables to send to the robot
+SetVariable "IS_RECT", isRect
+SetVariable "RECT_ABS_X", (minX + maxX)/2
+SetVariable "RECT_ABS_Y", (minY + maxY)/2
+</script>
+  <source_mode>gui</source_mode>
+  <tab_size_index>1</tab_size_index>
+</VBScript_Program>
+<NetworkTables>
+  <delay>100</delay>
+  <filter_type_index>0</filter_type_index>
+  <hostname>10.21.75.2</hostname>
+  <port>1735</port>
+  <prefix>/SmartDashboard/</prefix>
+  <variables_to_send>FPS
+IMAGE_HEIGHT
+IMAGE_WIDTH
+RECT_ABS_X
+RECT_ABS_Y</variables_to_send>
+  <variable_type_index>0</variable_type_index>
+</NetworkTables>

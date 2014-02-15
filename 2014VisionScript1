@@ -1,0 +1,26 @@
+if ubound(GetArrayVariable("SHAPES")) > 0 then
+	isRect = True
+	
+	' Get coordinates of bounding box
+	minX = GetVariable("SHAPES:3")
+	maxX = GetVariable("SHAPES:4")
+	minY = GetVariable("SHAPES:5")
+	maxY = GetVariable("SHAPES:6")
+	
+	' Change coordinates to center origin, -1 to 1
+	minX = (minX - GetVariable("IMAGE_WIDTH")/2) / (GetVariable("IMAGE_WIDTH")/2)
+	maxX = (maxX - GetVariable("IMAGE_WIDTH")/2) / (GetVariable("IMAGE_WIDTH")/2)
+	minY = (minY - GetVariable("IMAGE_HEIGHT")/2) / (GetVariable("IMAGE_HEIGHT")/2)
+	maxY = (maxY - GetVariable("IMAGE_HEIGHT")/2) / (GetVariable("IMAGE_HEIGHT")/2)
+else
+	isRect = False
+	minX = 0
+	maxX = 0
+	minY = 0
+	maxY = 0
+end if
+
+' Set the variables to send to the robot
+SetVariable "IS_RECT", isRect
+SetVariable "RECT_ABS_X", (minX + maxX)/2
+SetVariable "RECT_ABS_Y", (minY + maxY)/2
