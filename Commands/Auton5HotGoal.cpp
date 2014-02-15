@@ -10,15 +10,9 @@
 
 
 
-#include "Shoot.h"
+#include "Auton5HotGoal.h"
 
-#include "WinchLauncherDown.h"
-#include "UnwindWinch.h"
-#include "ReleaseLatch.h"
-#include "MoveArmOut.h"
-#include "Delay.h"
-
-Shoot::Shoot() {
+Auton5HotGoal::Auton5HotGoal() {
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());
 	//      AddSequential(new Command2());
@@ -36,26 +30,5 @@ Shoot::Shoot() {
 	// a CommandGroup containing them would require both the chassis and the
 	// arm.
 	
-	AddSequential(new MoveArmOut());
-	
-	if (Robot::arm->IsArmOut()){
-		if (!Robot::launcher->IsShooterArmDown()) {
-			AddSequential(new WinchLauncherDown());
-		}
-		if (!Robot::launcher->IsWinchUp()) {
-			AddSequential(new UnwindWinch());
-		}
-		//Actually shoot
-		if (Robot::arm->IsArmOut()) AddSequential(new ReleaseLatch());
-		AddSequential(new Delay(2));
-		//Prepare for next shot
-		if (Robot::arm->IsArmOut()) {
-			AddSequential(new WinchLauncherDown());
-			AddSequential(new UnwindWinch());
-		} else {
-			AddSequential(new MoveArmOut());
-		}
-		AddSequential(new WinchLauncherDown());
-		AddSequential(new UnwindWinch());
-	}
+	AddSequential(new Delay(0.5)); // Wait for the vision system to process a hot goal
 }

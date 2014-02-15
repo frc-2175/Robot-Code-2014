@@ -40,8 +40,7 @@ void Robot::RobotInit() {
 	autoChooser->AddObject("1 - Mobility Bonus", new Auton1MobilityBonus());
 	autoChooser->AddObject("2 - Blind Shot", new Auton2BlindShot());
 	autoChooser->AddObject("3 - Double Blind Shot", new Auton3DoubleBlindShot());
-//	autoChooser->AddObject("2 - Low Goal, Mobility Bonus", /* tbd */);
-//	autoChooser->AddObject("3 - High Goal, Mobility Bonus", /* tbd */);
+	autoChooser->AddObject("4 - Low Goal", new Auton4LowGoal());
 //	autoChooser->AddObject("4 - Hot Goal, Mobility Bonus", /* tbd */);
 //	autoChooser->AddObject("5 - High Goal, Hot Goal, Mobility Bonus", /* tbd */);
 	SmartDashboard::PutData("Autonomous Routine",autoChooser);

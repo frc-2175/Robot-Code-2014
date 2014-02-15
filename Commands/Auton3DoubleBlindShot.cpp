@@ -35,8 +35,6 @@ Auton3DoubleBlindShot::Auton3DoubleBlindShot() {
 	// a CommandGroup containing them would require both the chassis and the
 	// arm.
 	
-	AddSequential(new MoveArmOut());
-	
 	AddSequential(new Shoot(),3);
 	
 	if (Robot::launcher->IsShooterArmDown() && Robot::launcher->IsWinchUp()) {

@@ -23,6 +23,7 @@
 #include "Commands/Auton1MobilityBonus.h"
 #include "Commands/Auton2BlindShot.h"
 #include "Commands/Auton3DoubleBlindShot.h"
+#include "Commands/Auton4LowGoal.h"
 #include "OI.h"
 class Robot : public IterativeRobot {
 public:

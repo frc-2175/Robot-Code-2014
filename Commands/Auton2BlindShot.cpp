@@ -34,8 +34,6 @@ Auton2BlindShot::Auton2BlindShot() {
 	// a CommandGroup containing them would require both the chassis and the
 	// arm.
 	
-	AddSequential(new MoveArmOut());
-	
 	AddSequential(new Shoot(),8);
 	
 	AddSequential(new DriveForDistance(4)); // could do this with time delay

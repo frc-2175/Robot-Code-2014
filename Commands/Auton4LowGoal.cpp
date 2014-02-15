@@ -10,15 +10,12 @@
 
 
 
-#include "Shoot.h"
+#include "Auton4LowGoal.h"
 
-#include "WinchLauncherDown.h"
-#include "UnwindWinch.h"
-#include "ReleaseLatch.h"
-#include "MoveArmOut.h"
-#include "Delay.h"
+#include "DriveForDistance.h"
+#include "RunRollerBarBackwards.h"
 
-Shoot::Shoot() {
+Auton4LowGoal::Auton4LowGoal() {
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());
 	//      AddSequential(new Command2());
@@ -36,26 +33,7 @@ Shoot::Shoot() {
 	// a CommandGroup containing them would require both the chassis and the
 	// arm.
 	
-	AddSequential(new MoveArmOut());
+	AddSequential(new DriveForDistance(6));
 	
-	if (Robot::arm->IsArmOut()){
-		if (!Robot::launcher->IsShooterArmDown()) {
-			AddSequential(new WinchLauncherDown());
-		}
-		if (!Robot::launcher->IsWinchUp()) {
-			AddSequential(new UnwindWinch());
-		}
-		//Actually shoot
-		if (Robot::arm->IsArmOut()) AddSequential(new ReleaseLatch());
-		AddSequential(new Delay(2));
-		//Prepare for next shot
-		if (Robot::arm->IsArmOut()) {
-			AddSequential(new WinchLauncherDown());
-			AddSequential(new UnwindWinch());
-		} else {
-			AddSequential(new MoveArmOut());
-		}
-		AddSequential(new WinchLauncherDown());
-		AddSequential(new UnwindWinch());
-	}
+	AddSequential(new RunRollerBarBackwards(),1);
 }
