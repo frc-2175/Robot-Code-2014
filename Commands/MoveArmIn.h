@@ -23,12 +23,14 @@
  */
 class MoveArmIn: public Command {
 public:
-	MoveArmIn();
+	MoveArmIn(bool override = false);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
+	
+	bool overrideSensors;
 };
 
 #endif

@@ -40,7 +40,7 @@ Shoot::Shoot() {
 	AddSequential(new WinchLauncherDown());
 	AddSequential(new UnwindWinch());
 	AddSequential(new ReleaseLatch());
-	AddSequential(new WinchLauncerDown());
+	AddSequential(new WinchLauncherDown());
 	AddSequential(new UnwindWinch());
 /*
 	AddSequential(new MoveArmOut());

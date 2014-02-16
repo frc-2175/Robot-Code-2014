@@ -15,6 +15,7 @@
 #include "MoveArmOut.h"
 #include "Shoot.h"
 #include "DriveForDistance.h"
+#include "ArcadeDriveWithInputs.h"
 
 Auton2BlindShot::Auton2BlindShot() {
 	// Add Commands here:
@@ -36,5 +37,6 @@ Auton2BlindShot::Auton2BlindShot() {
 	
 	AddSequential(new Shoot(),8);
 	
-	AddSequential(new DriveForDistance(4)); // could do this with time delay
+//	AddSequential(new DriveForDistance(4)); // could do this with time delay
+	AddSequential(new ArcadeDriveWithInputs(0.75,0),1);
 }

@@ -35,5 +35,6 @@ Auton1MobilityBonus::Auton1MobilityBonus() {
 	
 	// AddSequential(new ArcadeDriveWithInputs(0.75,0,1));
 	
-	AddSequential(new DriveForDistance(4)); // Could do this with time delay
+//	AddSequential(new DriveForDistance(4)); // Could do this with time delay
+	AddSequential(new ArcadeDriveWithInputs(-0.75,0),2);
 }

@@ -16,6 +16,7 @@
 #include "Shoot.h"
 #include "DriveForDistance.h"
 #include "RunRollerBar.h"
+#include "ArcadeDriveWithInputs.h"
 
 Auton3DoubleBlindShot::Auton3DoubleBlindShot() {
 	// Add Commands here:
@@ -35,14 +36,17 @@ Auton3DoubleBlindShot::Auton3DoubleBlindShot() {
 	// a CommandGroup containing them would require both the chassis and the
 	// arm.
 	
-	AddSequential(new Shoot(),3);
+//	AddSequential(new Shoot(),3);
+//	
+//	if (Robot::launcher->IsShooterArmDown() && Robot::launcher->IsWinchUp()) {
+//		AddSequential(new RunRollerBar(),3); // on failure, we need to drive forward
+//		if (true /* !isThereABall */) {
+//			AddSequential(new Shoot(),3);
+//		}
+//	}
+//	
+//	AddSequential(new DriveForDistance(4)); // could do this with time delay
 	
-	if (Robot::launcher->IsShooterArmDown() && Robot::launcher->IsWinchUp()) {
-		AddSequential(new RunRollerBar(),3); // on failure, we need to drive forward
-		if (true /* !isThereABall */) {
-			AddSequential(new Shoot(),3);
-		}
-	}
 	
-	AddSequential(new DriveForDistance(4)); // could do this with time delay
+	AddSequential(new ArcadeDriveWithInputs(-0.75,0),2);
 }
