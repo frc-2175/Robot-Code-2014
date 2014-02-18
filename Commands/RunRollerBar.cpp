@@ -17,7 +17,7 @@ RunRollerBar::RunRollerBar() {
 }
 // Called just before this Command runs the first time
 void RunRollerBar::Initialize() {
-	
+	printf("Running the roller bar...\n");
 }
 // Called repeatedly when this Command is scheduled to run
 void RunRollerBar::Execute() {
@@ -30,6 +30,7 @@ bool RunRollerBar::IsFinished() {
 // Called once after isFinished returns true
 void RunRollerBar::End() {
 	Robot::arm->RunRollerBarAtSpeed(0);
+	printf("Done running the roller bar.\n\n");
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run

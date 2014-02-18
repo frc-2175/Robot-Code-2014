@@ -18,6 +18,8 @@ DriveToAngle::DriveToAngle(float angle) {
 }
 // Called just before this Command runs the first time
 void DriveToAngle::Initialize() {
+	printf("Driving to angle...\n");
+	
 	Robot::drivetrain->gyro->Reset();
 	Robot::drivetrain->gyroPID->Reset();
 	Robot::drivetrain->gyroPID->SetSetpoint(inputAngle);
@@ -40,6 +42,7 @@ bool DriveToAngle::IsFinished() {
 // Called once after isFinished returns true
 void DriveToAngle::End() {
 	Robot::drivetrain->gyroPID->Disable();
+	printf("Done driving to angle.\n\n");
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run

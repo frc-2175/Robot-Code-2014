@@ -19,6 +19,8 @@ DriveForDistance::DriveForDistance(float feet, bool backwards) {
 }
 // Called just before this Command runs the first time
 void DriveForDistance::Initialize() {
+	printf("Driving for distance...\n");
+	
 	float setpoint = inputFeet;
 	if (inputBackwards) setpoint *= -1;
 	Robot::drivetrain->leftEncoder->Reset();
@@ -37,6 +39,7 @@ bool DriveForDistance::IsFinished() {
 // Called once after isFinished returns true
 void DriveForDistance::End() {
 	Robot::drivetrain->encoderPID->Disable();
+	printf("Done driving for distance.\n\n");
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run

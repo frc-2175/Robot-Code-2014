@@ -16,7 +16,7 @@ WaitForHotGoal::WaitForHotGoal() {
 }
 // Called just before this Command runs the first time
 void WaitForHotGoal::Initialize() {
-	
+	printf("Waiting for the hot goal...\n");
 }
 // Called repeatedly when this Command is scheduled to run
 void WaitForHotGoal::Execute() {
@@ -29,7 +29,7 @@ bool WaitForHotGoal::IsFinished() {
 }
 // Called once after isFinished returns true
 void WaitForHotGoal::End() {
-	
+	printf("Done waiting for the hot goal.\n\n");
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run

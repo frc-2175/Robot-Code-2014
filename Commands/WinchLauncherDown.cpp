@@ -19,7 +19,7 @@ WinchLauncherDown::WinchLauncherDown(bool override) {
 }
 // Called just before this Command runs the first time
 void WinchLauncherDown::Initialize() {
-	
+	printf("Winching launcher down...\n");
 }
 // Called repeatedly when this Command is scheduled to run
 void WinchLauncherDown::Execute() {
@@ -40,6 +40,7 @@ bool WinchLauncherDown::IsFinished() {
 // Called once after isFinished returns true
 void WinchLauncherDown::End() {
 	Robot::launcher->RunWinchAtSpeed(0);
+	printf("Done winching launcher down.\n\n");
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run

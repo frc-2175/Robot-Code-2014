@@ -17,7 +17,7 @@ Delay::Delay(float seconds) {
 }
 // Called just before this Command runs the first time
 void Delay::Initialize() {
-	
+	printf("Starting delay...\n");
 }
 // Called repeatedly when this Command is scheduled to run
 void Delay::Execute() {
@@ -29,9 +29,10 @@ bool Delay::IsFinished() {
 }
 // Called once after isFinished returns true
 void Delay::End() {
-	
+	printf("Done delaying.\n\n");
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
 void Delay::Interrupted() {
+	End();
 }

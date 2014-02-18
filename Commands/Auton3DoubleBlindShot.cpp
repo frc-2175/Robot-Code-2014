@@ -12,11 +12,7 @@
 
 #include "Auton3DoubleBlindShot.h"
 
-#include "MoveArmOut.h"
-#include "Shoot.h"
-#include "DriveForDistance.h"
-#include "RunRollerBar.h"
-#include "ArcadeDriveWithInputs.h"
+#include "Commands.h"
 
 Auton3DoubleBlindShot::Auton3DoubleBlindShot() {
 	// Add Commands here:
@@ -47,6 +43,27 @@ Auton3DoubleBlindShot::Auton3DoubleBlindShot() {
 //	
 //	AddSequential(new DriveForDistance(4)); // could do this with time delay
 	
+	AddSequential(new MoveArmOut());
 	
-	AddSequential(new ArcadeDriveWithInputs(-0.75,0),2);
+	AddSequential(new WinchLauncherDown());
+	
+	AddSequential(new UnwindWinch());
+	
+	AddSequential(new ReleaseLatch());
+	
+	AddSequential(new WinchLauncherDown());
+	
+	AddParallel(new RunRollerBar());
+	AddSequential(new UnwindWinch());
+	
+	AddParallel(new RunRollerBar());
+	AddSequential(new Delay(1)); // To make sure the ball gets in
+//	AddSequential(new WaitForBall());
+	
+	AddSequential(new ReleaseLatch());
+	
+	AddSequential(new WinchLauncherDown());
+	
+	AddSequential(new UnwindWinch());
+
 }

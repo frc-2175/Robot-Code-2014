@@ -19,7 +19,7 @@ MoveArmIn::MoveArmIn(bool override) {
 }
 // Called just before this Command runs the first time
 void MoveArmIn::Initialize() {
-	
+	printf("Moving the arm in...\n");
 }
 // Called repeatedly when this Command is scheduled to run
 void MoveArmIn::Execute() {
@@ -36,7 +36,7 @@ bool MoveArmIn::IsFinished() {
 }
 // Called once after isFinished returns true
 void MoveArmIn::End() {
-	
+	printf("Done moving the arm in.\n\n");
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run

@@ -17,7 +17,7 @@ RunRollerBarBackwards::RunRollerBarBackwards() {
 }
 // Called just before this Command runs the first time
 void RunRollerBarBackwards::Initialize() {
-	
+	printf("Running the roller bar backwards...\n");
 }
 // Called repeatedly when this Command is scheduled to run
 void RunRollerBarBackwards::Execute() {
@@ -30,6 +30,7 @@ bool RunRollerBarBackwards::IsFinished() {
 // Called once after isFinished returns true
 void RunRollerBarBackwards::End() {
 	Robot::arm->RunRollerBarAtSpeed(0);
+	printf("Done running the roller bar backwards.\n\n");
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run

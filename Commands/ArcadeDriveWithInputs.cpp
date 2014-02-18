@@ -23,7 +23,7 @@ ArcadeDriveWithInputs::ArcadeDriveWithInputs(float forward, float turning, doubl
 }
 // Called just before this Command runs the first time
 void ArcadeDriveWithInputs::Initialize() {
-	
+	printf("Driving with inputs...\n");
 }
 // Called repeatedly when this Command is scheduled to run
 void ArcadeDriveWithInputs::Execute() {
@@ -40,6 +40,7 @@ bool ArcadeDriveWithInputs::IsFinished() {
 // Called once after isFinished returns true
 void ArcadeDriveWithInputs::End() {
 	Robot::drivetrain->ArcadeDriveWithParameters(0,0);
+	printf("Done driving with inputs.\n\n");
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run

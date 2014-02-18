@@ -18,7 +18,7 @@ MoveArmOut::MoveArmOut() {
 }
 // Called just before this Command runs the first time
 void MoveArmOut::Initialize() {
-	
+	printf("Moving the arm out...\n");
 }
 // Called repeatedly when this Command is scheduled to run
 void MoveArmOut::Execute() {
@@ -31,7 +31,7 @@ bool MoveArmOut::IsFinished() {
 }
 // Called once after isFinished returns true
 void MoveArmOut::End() {
-	
+	printf("Done moving the arm out.\n\n");
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run

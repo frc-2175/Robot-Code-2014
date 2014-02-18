@@ -17,7 +17,7 @@ ArcadeDriveWithJoysticks::ArcadeDriveWithJoysticks() {
 }
 // Called just before this Command runs the first time
 void ArcadeDriveWithJoysticks::Initialize() {
-	
+	printf("Driving with joysticks...\n");
 }
 // Called repeatedly when this Command is scheduled to run
 void ArcadeDriveWithJoysticks::Execute() {
@@ -30,7 +30,8 @@ bool ArcadeDriveWithJoysticks::IsFinished() {
 }
 // Called once after isFinished returns true
 void ArcadeDriveWithJoysticks::End() {
-	Robot::drivetrain->ArcadeDriveWithParameters(-Robot::oi->getJoystickLeft()->GetY(),Robot::oi->getJoystickRight()->GetX());
+	Robot::drivetrain->ArcadeDriveWithParameters(-Robot::oi->getForwardSpeed(),Robot::oi->getTurningSpeed());
+	printf("Done driving with joysticks.\n\n");
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run

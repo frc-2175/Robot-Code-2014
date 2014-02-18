@@ -18,7 +18,7 @@ ReleaseLatch::ReleaseLatch() {
 }
 // Called just before this Command runs the first time
 void ReleaseLatch::Initialize() {
-	
+	printf("Releasing the latch...\n");
 }
 // Called repeatedly when this Command is scheduled to run
 void ReleaseLatch::Execute() {
@@ -33,6 +33,7 @@ bool ReleaseLatch::IsFinished() {
 // Called once after isFinished returns true
 void ReleaseLatch::End() {
 	Robot::launcher->SetLatch(false);
+	printf("Done releasing the latch.\n\n");
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
