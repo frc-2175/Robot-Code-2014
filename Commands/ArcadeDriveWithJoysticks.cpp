@@ -21,7 +21,7 @@ void ArcadeDriveWithJoysticks::Initialize() {
 }
 // Called repeatedly when this Command is scheduled to run
 void ArcadeDriveWithJoysticks::Execute() {
-	Robot::drivetrain->ArcadeDriveWithParameters(-Robot::oi->getJoystickLeft()->GetY(),Robot::oi->getJoystickRight()->GetX());
+	Robot::drivetrain->ArcadeDriveWithParameters(Robot::oi->getForwardSpeed(),Robot::oi->getTurningSpeed());
 	SmartDashboard::PutNumber("Gyro Heading",Robot::drivetrain->gyro->GetAngle());
 }
 // Make this return true when this Command no longer needs to run execute()

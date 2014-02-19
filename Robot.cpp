@@ -56,7 +56,7 @@ void Robot::AutonomousInit() {
 }
 	
 void Robot::AutonomousPeriodic() {
-	printf("Running autonomous\n");
+//	printf("Running autonomous\n");
 	Scheduler::GetInstance()->Run();
 	if (oi->getGamepad()->GetRawButton(6))
 		printf("-----------------------------------\n");
@@ -72,7 +72,7 @@ void Robot::TeleopInit() {
 }
 	
 void Robot::TeleopPeriodic() {
-	printf("Running teleop\n");
+//	printf("Running teleop\n");
 	if (autonomousCommand != NULL)
 		Scheduler::GetInstance()->Run();
 	if (oi->getGamepad()->GetRawButton(6))
@@ -82,10 +82,10 @@ void Robot::TeleopPeriodic() {
 //	SmartDashboard::PutBoolean("Arm Out Switch 1", Robot::arm->armOutSwitch1->Get());
 //	SmartDashboard::PutBoolean("Arm Out Switch 2", Robot::arm->armOutSwitch2->Get());
 	
-//	SmartDashboard::PutNumber("Shooter Down", (double)Robot::launcher->IsShooterArmDown());
-//	SmartDashboard::PutNumber("Shooter Up", (double)Robot::launcher->IsWinchUp());
-//	SmartDashboard::PutNumber("Arm Out Switch 1", (double)Robot::arm->armOutSwitch1->Get());
-//	SmartDashboard::PutNumber("Arm Out Switch 2", (double)Robot::arm->armOutSwitch2->Get());
+	SmartDashboard::PutNumber("Shooter Down", (double)Robot::launcher->IsShooterArmDown());
+	SmartDashboard::PutNumber("Shooter Up", (double)Robot::launcher->IsWinchUp());
+	SmartDashboard::PutNumber("Arm Out Switch 1", (double)Robot::arm->armOutSwitch1->Get());
+	SmartDashboard::PutNumber("Arm Out Switch 2", (double)Robot::arm->armOutSwitch2->Get());
 }
 void Robot::TestPeriodic() {
 	lw->Run();
