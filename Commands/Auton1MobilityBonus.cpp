@@ -12,8 +12,7 @@
 
 #include "Auton1MobilityBonus.h"
 
-#include "ArcadeDriveWithInputs.h"
-#include "DriveForDistance.h"
+#include "Commands.h"
 
 Auton1MobilityBonus::Auton1MobilityBonus() {
 	// Add Commands here:
@@ -36,5 +35,5 @@ Auton1MobilityBonus::Auton1MobilityBonus() {
 	// AddSequential(new ArcadeDriveWithInputs(0.75,0,1));
 	
 //	AddSequential(new DriveForDistance(4)); // Could do this with time delay
-	AddSequential(new ArcadeDriveWithInputs(-0.75,0),2);
+	AddSequential(new ArcadeDriveWithInputs(-0.75,0,2));
 }

@@ -48,3 +48,13 @@ void Drivetrain::ShiftToGear(bool isHigh) {
 		shifters->Set(DoubleSolenoid::kReverse);
 	}
 }
+void Drivetrain::ResetEncoders() {
+	leftEncoder->Reset();
+	rightEncoder->Reset();
+}
+double Drivetrain::GetAverageEncoderDistance() {
+	return (leftEncoder->GetDistance() + rightEncoder->GetDistance()) / 2;
+}
+double Drivetrain::GetAverageEncoderRate() {
+	return (leftEncoder->GetRate() + rightEncoder->GetRate()) / 2;
+}

@@ -37,5 +37,8 @@ public:
 	void InitDefaultCommand();
 	void ArcadeDriveWithParameters(float forward, float turning);
 	void ShiftToGear(bool isHigh);
+	void ResetEncoders();
+	double GetAverageEncoderDistance();
+	double GetAverageEncoderRate();
 };
 #endif

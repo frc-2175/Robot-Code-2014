@@ -9,8 +9,8 @@
 // it from being updated in th future.
 
 
-#ifndef TURN_TEST_SPIKE_ON_H
-#define TURN_TEST_SPIKE_ON_H
+#ifndef AUTON_6_DOUBLE_HOT_GOAL_H
+#define AUTON_6_DOUBLE_HOT_GOAL_H
 
 
 #include "Commands/Subsystem.h"
@@ -21,14 +21,19 @@
  *
  * @author ExampleAuthor
  */
-class TurnTestSpikeOn: public Command {
+class Auton6DoubleHotGoal: public Command {
 public:
-	TurnTestSpikeOn();
+	Auton6DoubleHotGoal();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
+private:
+	int step;
+	int numShots;
+	bool isDone;
+	Command *activeCommand;
 };
 
 #endif

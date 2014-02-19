@@ -12,8 +12,7 @@
 
 #include "Auton4LowGoal.h"
 
-#include "DriveForDistance.h"
-#include "RunRollerBarBackwards.h"
+#include "Commands.h"
 
 Auton4LowGoal::Auton4LowGoal() {
 	// Add Commands here:
@@ -35,5 +34,5 @@ Auton4LowGoal::Auton4LowGoal() {
 	
 	AddSequential(new DriveForDistance(6));
 	
-	AddSequential(new RunRollerBarBackwards(),1);
+	AddSequential(new RunRollerBarBackwards(),2);
 }

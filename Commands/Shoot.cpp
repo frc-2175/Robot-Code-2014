@@ -42,42 +42,4 @@ Shoot::Shoot() {
 	AddSequential(new ReleaseLatch());
 	AddSequential(new WinchLauncherDown());
 	AddSequential(new UnwindWinch());
-/*
-	AddSequential(new MoveArmOut());
-	printf("I just moved the arm out\n");
-	
-	if (Robot::arm->IsArmOut()){
-		printf("The arm is out, so I'm gonna check the winch\n");
-		if (!Robot::launcher->IsShooterArmDown()) {
-			AddSequential(new WinchLauncherDown());
-			printf("The winch wasn't down, so I scheduled that\n");
-		}
-		if (!Robot::launcher->IsWinchUp()) {
-			AddSequential(new UnwindWinch());
-			printf("The winch wasn't unwound, so I fixed that\n");
-		}
-		//Actually shoot
-		printf("Everything looks good, let's shoot!\n");
-		if (Robot::arm->IsArmOut()) {
-			printf("I just checked one more time that the arm was out\n");
-			AddSequential(new ReleaseLatch());
-			printf("Released!\n");
-			AddSequential(new Delay(2));
-		}
-		//Prepare for next shot
-		printf("Okay, time to prepare the next shot\n");
-		if (Robot::arm->IsArmOut()) {
-			printf("The arm was out, so I can do the winch stuff\n");
-			AddSequential(new WinchLauncherDown());
-			AddSequential(new UnwindWinch());
-		} else {
-			printf("Gotta move the arm out first though...\n");
-			AddSequential(new MoveArmOut());
-		}
-		printf("Let's do the winch stuff one more time to make sure...\n");
-		AddSequential(new WinchLauncherDown());
-		AddSequential(new UnwindWinch());
-	}
-	printf("Done!\n");
-*/
 }

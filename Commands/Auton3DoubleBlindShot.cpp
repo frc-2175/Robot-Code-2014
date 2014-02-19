@@ -62,8 +62,8 @@ Auton3DoubleBlindShot::Auton3DoubleBlindShot() {
 	
 	AddSequential(new ReleaseLatch());
 	
+	AddParallel(new ArcadeDriveWithInputs(-0.75,0,2));
 	AddSequential(new WinchLauncherDown());
 	
 	AddSequential(new UnwindWinch());
-
 }

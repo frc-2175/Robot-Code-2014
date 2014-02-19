@@ -23,7 +23,7 @@
  */
 class RunRollerBar: public Command {
 public:
-	RunRollerBar();
+	RunRollerBar(double timeout = 0);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

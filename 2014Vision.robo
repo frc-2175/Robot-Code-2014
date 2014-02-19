@@ -14,7 +14,7 @@
 </RGB_Filter>
 <Shape_Match>
   <absent_after_frames>0</absent_after_frames>
-  <base_folder>C:\Program Files (x86)\RoboRealm\Objects\TestGoal</base_folder>
+  <base_folder>.\Vision Training</base_folder>
   <color_index>2</color_index>
   <create_shape_array>TRUE</create_shape_array>
   <display_box>TRUE</display_box>
@@ -34,7 +34,7 @@
   <min_angle>0</min_angle>
   <min_confidence>70</min_confidence>
   <min_size>10</min_size>
-  <monitor_folder>FALSE</monitor_folder>
+  <monitor_folder>TRUE</monitor_folder>
   <overlay_image>Current</overlay_image>
   <present_after_frames>0</present_after_frames>
   <select_top_blobs>100</select_top_blobs>
@@ -43,8 +43,8 @@
 </Shape_Match>
 <VBScript_Program>
   <script>if ubound(GetArrayVariable("SHAPES")) &gt; 0 then
-	isRect = True
-	
+	isRect = True
+	
 	' Get coordinates of bounding box
 	minX = GetVariable("SHAPES:3")
 	maxX = GetVariable("SHAPES:4")
@@ -56,7 +56,7 @@
 	maxX = (maxX - GetVariable("IMAGE_WIDTH")/2) / (GetVariable("IMAGE_WIDTH")/2)
 	minY = (minY - GetVariable("IMAGE_HEIGHT")/2) / (GetVariable("IMAGE_HEIGHT")/2)
 	maxY = (maxY - GetVariable("IMAGE_HEIGHT")/2) / (GetVariable("IMAGE_HEIGHT")/2)
-else
+else
 	isRect = False
 	minX = 0
 	maxX = 0
@@ -64,8 +64,8 @@ else
 	maxY = 0
 end if
 
-' Set the variables to send to the robot
-SetVariable "IS_RECT", isRect
+' Set the variables to send to the robot
+SetVariable "IS_RECT", isRect
 SetVariable "RECT_ABS_X", (minX + maxX)/2
 SetVariable "RECT_ABS_Y", (minY + maxY)/2
 </script>
@@ -78,10 +78,6 @@ SetVariable "RECT_ABS_Y", (minY + maxY)/2
   <hostname>10.21.75.2</hostname>
   <port>1735</port>
   <prefix>/SmartDashboard/</prefix>
-  <variables_to_send>FPS
-IMAGE_HEIGHT
-IMAGE_WIDTH
-RECT_ABS_X
-RECT_ABS_Y</variables_to_send>
+  <variables_to_send>IS_RECT</variables_to_send>
   <variable_type_index>0</variable_type_index>
 </NetworkTables>

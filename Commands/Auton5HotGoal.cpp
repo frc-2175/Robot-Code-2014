@@ -12,7 +12,7 @@
 
 #include "Auton5HotGoal.h"
 
-#include "Delay.h"
+#include "Commands.h"
 
 Auton5HotGoal::Auton5HotGoal() {
 	// Add Commands here:
@@ -33,4 +33,17 @@ Auton5HotGoal::Auton5HotGoal() {
 	// arm.
 	
 	AddSequential(new Delay(0.5)); // Wait for the vision system to process a hot goal
+	
+	AddSequential(new WaitForHotGoal(),7);
+	
+	AddSequential(new WinchLauncherDown());
+	
+	AddSequential(new UnwindWinch());
+	
+	AddSequential(new ReleaseLatch());
+	
+	AddParallel(new ArcadeDriveWithInputs(-0.75,0,2));
+	AddSequential(new WinchLauncherDown());
+	
+	AddSequential(new UnwindWinch());
 }
