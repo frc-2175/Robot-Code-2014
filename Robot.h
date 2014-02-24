@@ -26,6 +26,7 @@
 #include "Commands/Auton4LowGoal.h"
 #include "Commands/Auton5HotGoal.h"
 #include "Commands/Auton6DoubleHotGoal.h"
+#include "Commands/Auton6DoubleHotGoalSANE.h"
 #include "OI.h"
 class Robot : public IterativeRobot {
 public:

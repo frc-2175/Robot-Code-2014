@@ -9,20 +9,30 @@
 // it from being updated in th future.
 
 
+#ifndef AUTON_6_DOUBLE_HOT_GOAL_SANE_H
+#define AUTON_6_DOUBLE_HOT_GOAL_SANE_H
 
-#ifndef SHOOT_H
-#define SHOOT_H
 
-#include "Commands/CommandGroup.h"
+#include "Commands/Subsystem.h"
+#include "../Robot.h"
 
 /**
  *
  *
  * @author ExampleAuthor
  */
-class Shoot: public CommandGroup {
-public:	
-	Shoot(bool unwind = true);
+class Auton6DoubleHotGoalSANE: public Command {
+public:
+	Auton6DoubleHotGoalSANE();
+	virtual void Initialize();
+	virtual void Execute();
+	virtual bool IsFinished();
+	virtual void End();
+	virtual void Interrupted();
+private:
+	int step;
+	bool isDone;
+	Command *activeCommand;
 };
 
 #endif
