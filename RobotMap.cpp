@@ -49,7 +49,7 @@ void RobotMap::init() {
         drivetrainRobotDrive->SetSensitivity(0.5);
         drivetrainRobotDrive->SetMaxOutput(1.0);
         
-	drivetrainLeftEncoder = new Encoder(1, 10, 1, 2, false, Encoder::k4X);
+	drivetrainLeftEncoder = new Encoder(1, 1, 1, 2, false, Encoder::k4X);
 	lw->AddSensor("Drivetrain", "Left Encoder", drivetrainLeftEncoder);
 	drivetrainLeftEncoder->SetDistancePerPulse(0.001);
         drivetrainLeftEncoder->SetPIDSourceParameter(Encoder::kDistance);
@@ -74,7 +74,7 @@ void RobotMap::init() {
 	armRollerBar = new Talon(1, 4);
 	lw->AddActuator("Arm", "Roller Bar", (Talon*) armRollerBar);
 	
-	armArmOutSwitch1 = new DigitalInput(1, 8);
+	armArmOutSwitch1 = new DigitalInput(1, 10);
 	lw->AddSensor("Arm", "Arm Out Switch 1", armArmOutSwitch1);
 	
 	armArmOutSwitch2 = new DigitalInput(1, 9);
@@ -83,7 +83,7 @@ void RobotMap::init() {
 	launcherLatchSwitch = new DigitalInput(1, 5);
 	lw->AddSensor("Launcher", "Latch Switch", launcherLatchSwitch);
 	
-	launcherWinchUpSwitch = new DigitalInput(1, 6);
+	launcherWinchUpSwitch = new DigitalInput(1, 8);
 	lw->AddSensor("Launcher", "Winch Up Switch", launcherWinchUpSwitch);
 	
 	launcherWinchMotor = new Talon(1, 3);

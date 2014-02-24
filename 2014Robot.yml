@@ -125,7 +125,7 @@ Children:
           default: '1'
           name: Channel A Channel (Digital)
           validators: &id015 [DigitalChannel]
-          value: '10'
+          value: '1'
         Reverse Direction: !!robotbuilder.data.properties.BooleanProperty {default: false,
           name: Reverse Direction, validators: null, value: false}
     - Name: Right Encoder
@@ -306,7 +306,7 @@ Children:
           default: '1'
           name: Input Channel (Digital)
           validators: &id025 [DigitalChannel]
-          value: '8'
+          value: '10'
         Input Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
           choices: &id026 ['1', '2']
           default: '1'
@@ -360,7 +360,7 @@ Children:
           default: '1'
           name: Input Channel (Digital)
           validators: *id025
-          value: '6'
+          value: '8'
         Input Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
           choices: *id026
           default: '1'
@@ -919,6 +919,6 @@ Properties:
     validators: null, value: 2175}
   Export Commands: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Export Commands, validators: null, value: true}
-  Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\Leonard\NetBeansProjects',
+  Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\Will\NetBeansProjects',
     extension: null, folder: true, name: Java Project Directory, validators: null,
     value: 'C:\Users\Leonard\NetBeansProjects'}

@@ -24,7 +24,7 @@ void WinchLauncherDown::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void WinchLauncherDown::Execute() {
 	if (Robot::arm->IsArmOut() || overrideSensors) {
-		Robot::launcher->RunWinchAtSpeed(0.6);
+		Robot::launcher->RunWinchAtSpeed(0.7);
 	} else {
 		Robot::launcher->RunWinchAtSpeed(0);
 	}
