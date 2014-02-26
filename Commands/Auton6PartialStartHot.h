@@ -10,8 +10,8 @@
 
 
 
-#ifndef SHOOT_H
-#define SHOOT_H
+#ifndef AUTON_6_PARTIAL_START_HOT_H
+#define AUTON_6_PARTIAL_START_HOT_H
 
 #include "Commands/CommandGroup.h"
 
@@ -20,9 +20,9 @@
  *
  * @author ExampleAuthor
  */
-class Shoot: public CommandGroup {
+class Auton6PartialStartHot: public CommandGroup {
 public:	
-	Shoot(bool unwind = true);
+	Auton6PartialStartHot();
 };
 
 #endif

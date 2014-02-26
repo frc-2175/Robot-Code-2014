@@ -9,20 +9,26 @@
 // it from being updated in th future.
 
 
+#ifndef TENSION_LAUNCHER_H
+#define TENSION_LAUNCHER_H
 
-#ifndef SHOOT_H
-#define SHOOT_H
 
-#include "Commands/CommandGroup.h"
+#include "Commands/Subsystem.h"
+#include "../Robot.h"
 
 /**
  *
  *
  * @author ExampleAuthor
  */
-class Shoot: public CommandGroup {
-public:	
-	Shoot(bool unwind = true);
+class TensionLauncher: public Command {
+public:
+	TensionLauncher();
+	virtual void Initialize();
+	virtual void Execute();
+	virtual bool IsFinished();
+	virtual void End();
+	virtual void Interrupted();
 };
 
 #endif

@@ -10,15 +10,10 @@
 
 
 
-#include "Shoot.h"
+#include "Auton6PartialStartHot.h"
+#include "Commands.h"
 
-#include "WinchLauncherDown.h"
-#include "UnwindWinch.h"
-#include "ReleaseLatch.h"
-#include "MoveArmOut.h"
-#include "Delay.h"
-
-Shoot::Shoot(bool unwind) {
+Auton6PartialStartHot::Auton6PartialStartHot() {
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());
 	//      AddSequential(new Command2());
@@ -36,10 +31,15 @@ Shoot::Shoot(bool unwind) {
 	// a CommandGroup containing them would require both the chassis and the
 	// arm.
 	
-	AddSequential(new MoveArmOut());
-	AddSequential(new WinchLauncherDown());
-	AddSequential(new UnwindWinch());
-	AddSequential(new ReleaseLatch());
-	AddSequential(new WinchLauncherDown());
-	if (unwind)	AddSequential(new UnwindWinch());
+	AddSequential(new Shoot(false));
+	
+	AddParallel(new UnwindWinch());
+	AddSequential(new RunRollerBar());
+	
+	AddSequential(new DriveToAngle(40));
+	
+	AddSequential(new Shoot(false));
+	
+	AddParallel(new UnwindWinch());
+	AddSequential(new ArcadeDriveWithInputs(-0.75,0,3));
 }

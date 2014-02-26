@@ -28,13 +28,13 @@ void Auton6DoubleHotGoal::Execute() {
 	switch (step) {
 	case 1:		activeCommand = new Delay(0.5); // Wait for the vision system
 				activeCommand->Start();
-				step++;
+				step = 2;
 				break;
-	case 2:		if (!activeCommand->IsRunning()) step++; // Are we done delaying?
+	case 2:		if (!activeCommand->IsRunning()) step = 3; // Are we done delaying?
 				break;
 	case 3:		if (SmartDashboard::GetBoolean("IS_RECT")) { // Is there a hot goal?
 					// We are in front of the hot goal
-					step++;
+					step = 4;
 				} else {
 					// We chose the wrong goal :(
 					step = 8;
@@ -43,26 +43,26 @@ void Auton6DoubleHotGoal::Execute() {
 	case 4:		activeCommand = new Shoot(); // Hot goal detected, so shoot!
 				activeCommand->Start();
 				numShots++;
-				step++;
+				step = 5;
 				break;
-	case 5:		if (!activeCommand->IsRunning()) step++; // Are we done shooting?
+	case 5:		if (!activeCommand->IsRunning()) step = 6; // Are we done shooting?
 				break;
 	case 6:		activeCommand = new RunRollerBar(1); // Slurp in another ball
 				activeCommand->Start();
-				step++;
+				step = 7;
 				break;
-	case 7:		if (!activeCommand->IsRunning()) step++; // Are we done slurping?
+	case 7:		if (!activeCommand->IsRunning()) step = 8; // Are we done slurping?
 				break;
 	case 8:		activeCommand = new DriveToAngle(40); // Point toward the other goal
 				activeCommand->Start();
-				step++;
+				step = 9;
 				break;
-	case 9:		if (!activeCommand->IsRunning()) step++; // Are we done turning?
+	case 9:		if (!activeCommand->IsRunning()) step = 10; // Are we done turning?
 				break;
 	case 10:	activeCommand = new Shoot(); // Shoot!
 				activeCommand->Start();
 				numShots++;
-				step++;
+				step = 11;
 				break;
 	case 11:	if (!activeCommand->IsRunning()) step++; // Are we done shooting?
 				break;
