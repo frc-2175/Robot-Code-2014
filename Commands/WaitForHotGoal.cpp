@@ -24,8 +24,12 @@ void WaitForHotGoal::Execute() {
 }
 // Make this return true when this Command no longer needs to run execute()
 bool WaitForHotGoal::IsFinished() {
-//	if (SmartDashboard::GetNumber("RECT_ABS_X") == 0) // in progress
-	return SmartDashboard::GetBoolean("IS_RECT");
+	if (SmartDashboard::GetNumber("IS_RECT") == 0) {
+		return true;
+	} else {
+		return false;
+	}
+//	return SmartDashboard::GetBoolean("IS_RECT");
 }
 // Called once after isFinished returns true
 void WaitForHotGoal::End() {

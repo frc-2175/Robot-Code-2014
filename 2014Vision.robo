@@ -5,8 +5,15 @@
   <timeout>1000</timeout>
   <url>http://10.21.75.11/mjpg/video.mjpg</url>
 </Read_HTTP>
-<RGB_Filter>
+<RGB_Filter disabled>
   <channel>2</channel>
+  <hue_value>50</hue_value>
+  <hysteresis>0</hysteresis>
+  <min_value>100</min_value>
+  <result_type>2</result_type>
+</RGB_Filter>
+<RGB_Filter>
+  <channel>1</channel>
   <hue_value>50</hue_value>
   <hysteresis>0</hysteresis>
   <min_value>100</min_value>
@@ -21,9 +28,9 @@
   <display_confidence>TRUE</display_confidence>
   <display_coord>TRUE</display_coord>
   <display_filename>FALSE</display_filename>
-  <display_orientation>TRUE</display_orientation>
+  <display_orientation>FALSE</display_orientation>
   <display_result>-1</display_result>
-  <display_size>TRUE</display_size>
+  <display_size>FALSE</display_size>
   <font_size_index>-1</font_size_index>
   <high_resolution_orientation>FALSE</high_resolution_orientation>
   <is_mirrored_invariant>FALSE</is_mirrored_invariant>
@@ -37,13 +44,13 @@
   <monitor_folder>TRUE</monitor_folder>
   <overlay_image>Current</overlay_image>
   <present_after_frames>0</present_after_frames>
-  <select_top_blobs>100</select_top_blobs>
+  <select_top_blobs>1024</select_top_blobs>
   <sort_array_on_x>FALSE</sort_array_on_x>
   <sort_array_on_y>FALSE</sort_array_on_y>
 </Shape_Match>
 <VBScript_Program>
   <script>if ubound(GetArrayVariable("SHAPES")) &gt; 0 then
-	isRect = True
+	isRect = 1
 	
 	' Get coordinates of bounding box
 	minX = GetVariable("SHAPES:3")
@@ -57,7 +64,7 @@
 	minY = (minY - GetVariable("IMAGE_HEIGHT")/2) / (GetVariable("IMAGE_HEIGHT")/2)
 	maxY = (maxY - GetVariable("IMAGE_HEIGHT")/2) / (GetVariable("IMAGE_HEIGHT")/2)
 else
-	isRect = False
+	isRect = 0
 	minX = 0
 	maxX = 0
 	minY = 0

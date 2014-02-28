@@ -77,7 +77,7 @@ void RobotMap::init() {
 	armArmOutSwitch1 = new DigitalInput(1, 10);
 	lw->AddSensor("Arm", "Arm Out Switch 1", armArmOutSwitch1);
 	
-	armArmOutSwitch2 = new DigitalInput(1, 9);
+	armArmOutSwitch2 = new DigitalInput(1, 11);
 	lw->AddSensor("Arm", "Arm Out Switch 2", armArmOutSwitch2);
 	
 	launcherLatchSwitch = new DigitalInput(1, 5);
@@ -95,7 +95,7 @@ void RobotMap::init() {
 	launcherLatch = new Solenoid(1, 5);
 	lw->AddActuator("Launcher", "Latch", launcherLatch);
 	
-	launcherTension = new DoubleSolenoid(1, 6, 7);      
+	launcherTension = new DoubleSolenoid(1, 6, 7);  
 	
 	
 	launcherCatcher = new Solenoid(1, 8);

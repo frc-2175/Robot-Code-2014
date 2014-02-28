@@ -41,5 +41,8 @@ Shoot::Shoot(bool unwind) {
 	AddSequential(new UnwindWinch());
 	AddSequential(new ReleaseLatch());
 	AddSequential(new WinchLauncherDown());
-	if (unwind)	AddSequential(new UnwindWinch());
+	if (unwind)
+		AddSequential(new UnwindWinch());
+	
+	//printf("Unwind?\n%s\n",unwind?"true":"false");
 }
