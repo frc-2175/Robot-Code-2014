@@ -32,26 +32,17 @@ Auton3DoubleBlindShot::Auton3DoubleBlindShot() {
 	// a CommandGroup containing them would require both the chassis and the
 	// arm.
 	
-//	AddSequential(new Shoot(),3);
+//	AddSequential(new MoveArmOut());
 //	
-//	if (Robot::launcher->IsShooterArmDown() && Robot::launcher->IsWinchUp()) {
-//		AddSequential(new RunRollerBar(),3); // on failure, we need to drive forward
-//		if (true /* !isThereABall */) {
-//			AddSequential(new Shoot(),3);
-//		}
-//	}
+//	AddSequential(new WinchLauncherDown());
 //	
-//	AddSequential(new DriveForDistance(4)); // could do this with time delay
+//	AddSequential(new UnwindWinch());
+//	
+//	AddSequential(new ReleaseLatch());
+//	
+//	AddSequential(new WinchLauncherDown());
 	
-	AddSequential(new MoveArmOut());
-	
-	AddSequential(new WinchLauncherDown());
-	
-	AddSequential(new UnwindWinch());
-	
-	AddSequential(new ReleaseLatch());
-	
-	AddSequential(new WinchLauncherDown());
+	AddSequential(new Shoot(false));
 	
 	AddParallel(new RunRollerBar());
 	AddSequential(new UnwindWinch());

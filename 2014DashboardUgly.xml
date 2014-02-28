@@ -1,0 +1,51 @@
+<xml version="1.0">
+<dashboard>
+	<widget field="IS_RECT" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="179" y="63"/>
+	</widget>
+	<widget field="Gyro Heading" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="157" y="42"/>
+	</widget>
+	<widget field="Arm Out Switch 2" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="312" y="21"/>
+	</widget>
+	<widget field="Arm Out Switch 1" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="312" y="0"/>
+	</widget>
+	<widget field="Shooter Up" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="157" y="21"/>
+	</widget>
+	<widget field="Shooter Down" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="157" y="0"/>
+	</widget>
+	<widget field="Autonomous Routine" type="String Chooser" class="edu.wpi.first.smartdashboard.gui.elements.Chooser">
+		<location x="0" y="272"/>
+	</widget>
+	<widget field="MoveArmIn" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="238"/>
+	</widget>
+	<widget field="Tension Launcher" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="204"/>
+	</widget>
+	<widget field="Shoot" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="170"/>
+	</widget>
+	<widget field="ReleaseLatch" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="136"/>
+	</widget>
+	<widget field="UnwindWinch" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="102"/>
+	</widget>
+	<widget field="WinchLauncherDown" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="68"/>
+	</widget>
+	<widget field="MoveArmOut" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="34"/>
+	</widget>
+	<widget field="ShiftToHighGear" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="0"/>
+	</widget>
+</dashboard>
+<live-window>
+</live-window>
+</xml>

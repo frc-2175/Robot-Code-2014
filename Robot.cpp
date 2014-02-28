@@ -72,11 +72,11 @@ void Robot::TeleopInit() {
 }
 	
 void Robot::TeleopPeriodic() {
-<<<<<<< HEAD
+//<<<<<<< HEAD
 	//printf("Running teleop\n");
-=======
+//=======
 //	printf("Running teleop\n");
->>>>>>> 86e79d0f9b7c2eaa23e906c9e7f2802d0695aca5
+//>>>>>>> 86e79d0f9b7c2eaa23e906c9e7f2802d0695aca5
 	if (autonomousCommand != NULL)
 		Scheduler::GetInstance()->Run();
 	if (oi->getGamepad()->GetRawButton(6))
