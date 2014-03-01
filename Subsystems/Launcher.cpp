@@ -14,6 +14,7 @@ Launcher::Launcher() : Subsystem("Launcher") {
 	latchSwitch = RobotMap::launcherLatchSwitch;
 	winchUpSwitch = RobotMap::launcherWinchUpSwitch;
 	winchMotor = RobotMap::launcherWinchMotor;
+	winchEncoder = RobotMap::launcherWinchEncoder;
 	ballSensor = RobotMap::launcherBallSensor;
 	latch = RobotMap::launcherLatch;
 	tension = RobotMap::launcherTension;

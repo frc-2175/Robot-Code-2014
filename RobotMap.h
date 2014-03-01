@@ -34,6 +34,7 @@ public:
 	static DigitalInput* launcherLatchSwitch;
 	static DigitalInput* launcherWinchUpSwitch;
 	static SpeedController* launcherWinchMotor;
+	static Encoder* launcherWinchEncoder;
 	static AnalogChannel* launcherBallSensor;
 	static Solenoid* launcherLatch;
 	static DoubleSolenoid* launcherTension;

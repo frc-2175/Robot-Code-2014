@@ -25,6 +25,7 @@ DigitalInput* RobotMap::armArmOutSwitch2 = NULL;
 DigitalInput* RobotMap::launcherLatchSwitch = NULL;
 DigitalInput* RobotMap::launcherWinchUpSwitch = NULL;
 SpeedController* RobotMap::launcherWinchMotor = NULL;
+Encoder* RobotMap::launcherWinchEncoder = NULL;
 AnalogChannel* RobotMap::launcherBallSensor = NULL;
 Solenoid* RobotMap::launcherLatch = NULL;
 DoubleSolenoid* RobotMap::launcherTension = NULL;
@@ -89,13 +90,18 @@ void RobotMap::init() {
 	launcherWinchMotor = new Talon(1, 3);
 	lw->AddActuator("Launcher", "Winch Motor", (Talon*) launcherWinchMotor);
 	
+	launcherWinchEncoder = new Encoder(1, 13, 1, 14, false, Encoder::k4X);
+	lw->AddSensor("Launcher", "Winch Encoder", launcherWinchEncoder);
+	launcherWinchEncoder->SetDistancePerPulse(1.0);
+        launcherWinchEncoder->SetPIDSourceParameter(Encoder::kDistance);
+        launcherWinchEncoder->Start();
 	launcherBallSensor = new AnalogChannel(1, 2);
 	lw->AddSensor("Launcher", "Ball Sensor", launcherBallSensor);
 	
 	launcherLatch = new Solenoid(1, 5);
 	lw->AddActuator("Launcher", "Latch", launcherLatch);
 	
-	launcherTension = new DoubleSolenoid(1, 6, 7);  
+	launcherTension = new DoubleSolenoid(1, 6, 7);      
 	
 	
 	launcherCatcher = new Solenoid(1, 8);

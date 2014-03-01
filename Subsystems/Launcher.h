@@ -25,6 +25,7 @@ public:
 	DigitalInput* latchSwitch;
 	DigitalInput* winchUpSwitch;
 	SpeedController* winchMotor;
+	Encoder* winchEncoder;
 	AnalogChannel* ballSensor;
 	Solenoid* latch;
 	DoubleSolenoid* tension;
