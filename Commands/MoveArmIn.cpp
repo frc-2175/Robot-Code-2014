@@ -23,7 +23,7 @@ void MoveArmIn::Initialize() {
 }
 // Called repeatedly when this Command is scheduled to run
 void MoveArmIn::Execute() {
-	if (Robot::launcher->IsShooterArmDown() || overrideSensors) {
+	if (/* Robot::launcher->IsShooterArmDown() */ true || overrideSensors) { // The override was incredibly annoying
 		Robot::arm->MoveArmToPosition(true);
 	} else {
 		Robot::arm->MoveArmToPosition(false);

@@ -24,6 +24,7 @@ void DriveForDistance::Initialize() {
 	float setpoint = inputFeet;
 	if (inputBackwards) setpoint *= -1;
 	Robot::drivetrain->leftEncoder->Reset();
+	Robot::drivetrain->encoderPID->Reset();
 	Robot::drivetrain->encoderPID->SetSetpoint(setpoint);
 	Robot::drivetrain->encoderPID->Enable();
 }
