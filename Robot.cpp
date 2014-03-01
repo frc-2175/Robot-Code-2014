@@ -90,8 +90,6 @@ void Robot::TeleopPeriodic() {
 	SmartDashboard::PutNumber("Shooter Up", (double)Robot::launcher->IsWinchUp());
 	SmartDashboard::PutNumber("Arm Out Switch 1", (double)Robot::arm->armOutSwitch1->Get());
 	SmartDashboard::PutNumber("Arm Out Switch 2", (double)Robot::arm->armOutSwitch2->Get());
-	SmartDashboard::PutNumber("Drive Encoder - Right Side", (double)Robot::drivetrain->rightEncoder->Get());
-	SmartDashboard::PutNumber("Winch Encoder", (double)Robot::launcher->winchEncoder->Get());
 }
 void Robot::TestPeriodic() {
 	lw->Run();
