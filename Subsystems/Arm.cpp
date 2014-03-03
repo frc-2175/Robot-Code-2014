@@ -38,8 +38,10 @@ void Arm::RunRollerBarAtSpeed(float speed) {
 }
 bool Arm::IsArmOut() {
 	//	return !(bool)armOutSwitch1->Get() || !(bool)armOutSwitch2->Get(); // The switches read 1 when the arm is NOT out. We need to typecast these values to bool and invert them before doing logic on them.
-	if( (armOutSwitch1->Get() == 0) || (armOutSwitch2->Get() == 0) )
+	/*if( (armOutSwitch1->Get() == 0) || (armOutSwitch2->Get() == 0) )
 		return true;
 	else
 		return false;
-	}
+	*/
+	return (armOutSwitch1->Get() == 0) || (armOutSwitch2->Get() == 0);
+}
